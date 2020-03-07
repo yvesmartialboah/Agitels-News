@@ -8,13 +8,13 @@ class Auteur extends Model
 {
     protected $fillable = ['nom', 'prenom', 'contact', 'email', 'filiere', 'fonction'];
 
-    // public function Publication()
-    // {
-    //     return $this->hasMany('App\Publication');
-    // }
+    public function Publication()
+    {
+       return $this->hasMany('App\Models\Publication');
+    }
 
-    // public function Interview()
-    // {
-    //     return $this->hasMany('App\Interview');
-    // }
+    public function Interview()
+    {
+        return $this->hasMany('App\Models\Interview');
+    }
 }

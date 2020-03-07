@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	UsersTableSeeder::class,
         	typeInterviewSeeder::class,
-        	typePublicationSeeder::class
+        	typePublicationSeeder::class,
+            AuthorSeed::class
         ]);
     }
 }

@@ -1,4 +1,4 @@
-## Comment Déployer en locale
+## Comment Déployer cette application en locale
 
 Il faut exécuter les commandes de migrations et les seeds préalablement enregistrés après avoir créer une base de données.
 

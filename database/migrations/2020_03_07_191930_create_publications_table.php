@@ -15,13 +15,14 @@ class CreatePublicationsTable extends Migration
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
+            $table->string('libelle')->nullable();
             $table->string('image')->nullable();
-            $table->text('contenu');
-            $table->integer('type_publication_id')->unsigned()->references('id')->on('type_publications')->foreign('type_publication_id')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('auteur_id')->unsigned()->references('id')->on('auteurs')->foreign('auteur_id')->onDelete('cascade')->onUpdate('cascade');
+            $table->text('contenu')->nullable();
+            $table->integer('type_publication_id')->unsigned()->references('id')->on('type_publications')->foreign('type_publication_id');
+            $table->integer('auteur_id')->unsigned()->references('id')->on('auteurs')->foreign('auteur_id');
             $table->timestamps();
         });
+        //->onDelete('cascade')->onUpdate('cascade')
     }
 
     /**

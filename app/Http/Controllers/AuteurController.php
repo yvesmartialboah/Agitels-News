@@ -85,7 +85,7 @@ class AuteurController extends Controller
     public function edit($id)
     {
         $Auteur = Auteur::findOrFail($id);
-        return view('administration.Auteur.show', compact('Auteur'));
+        return view('administration.Auteur.edit', compact('Auteur'));
     }
 
     /**

@@ -20,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Auteur
 Route::resource('auteur', 'AuteurController');
+
+// Publication
+Route::resource('publication', 'publicationController');

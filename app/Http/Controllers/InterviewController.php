@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\typeInterview;
+use App\Models\Interview;
+use App\Models\Auteur;
+
 class InterviewController extends Controller
 {
     /**
@@ -13,7 +17,9 @@ class InterviewController extends Controller
      */
     public function index()
     {
-        //
+        $Interview = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->get();
+        // dd($Interview);
+        return view('administration.Interview.index',compact('Interview'));
     }
 
     /**
@@ -23,7 +29,9 @@ class InterviewController extends Controller
      */
     public function create()
     {
-        //
+        $typeInterview = typeInterview::OrderBy('id','desc')->get();
+        $Auteur = Auteur::OrderBy('id','desc')->get();
+        return view('administration.Interview.create',compact('typeInterview', 'Auteur'));
     }
 
     /**
@@ -34,7 +42,23 @@ class InterviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+           'libelle'=>'Required',
+           'description'=>'Required'
+           // 'type_interview_id'=>'Required',
+           // 'auteur_id'=>'Required',
+        ]);
+
+        Interview::create([
+        'libelle'=>$request->libelle,
+        'description'=>$request->description,
+        'audio_url'=>$request->audio_url,
+        'video_url'=>$request->video_url,
+        'type_interview_id'=>$request->type_interview_id,
+        'auteur_id'=>$request->auteur_id
+        ]);
+        Session()->flash("success", "L'interview à été Ajouté avec success !"); 
+        return redirect()->route('interview.index');
     }
 
     /**
@@ -45,7 +69,8 @@ class InterviewController extends Controller
      */
     public function show($id)
     {
-        //
+        $Interview=Interview::findOrFail($id);
+        return view('administration.Interview.show',compact('Interview'));
     }
 
     /**
@@ -56,7 +81,10 @@ class InterviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $typeInterview = typeInterview::OrderBy('id','desc')->get();
+        $Auteur = Auteur::OrderBy('id','desc')->get();
+        $Interview=Interview::findOrFail($id);
+        return view('administration.Interview.show',compact('Interview','typeInterview','Auteur'));
     }
 
     /**
@@ -68,7 +96,24 @@ class InterviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+           'libelle'=>'Required',
+           'description'=>'Required'
+           // 'type_interview_id'=>'Required',
+           // 'auteur_id'=>'Required',
+        ]);
+
+        $Interview=Interview::findOrFail($id);
+        $Interview->update([
+        'libelle'=>$request->libelle,
+        'description'=>$request->description,
+        'audio_url'=>$request->audio_url,
+        'video_url'=>$request->video_url,
+        'type_interview_id'=>$request->type_interview_id,
+        'auteur_id'=>$request->auteur_id
+        ]);
+        Session()->flash("success", "L'interview à été mis à jour avec success !"); 
+        return redirect()->route('interview.index');
     }
 
     /**
@@ -79,6 +124,8 @@ class InterviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Interview::destroy($id);
+        Session()->flash('success', 'Interview Supprimé avec success !');  
+        return redirect()->route('interview.index');
     }
 }

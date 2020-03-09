@@ -105,13 +105,13 @@ class AuteurController extends Controller
 
         $Auteur = Auteur::findOrFail($id);
         $Auteur->update([
-        'nom'=>$request->nom,
-        'prenom'=>$request->prenom,
-        'contact'=>$request->contact,
-        'email'=>$request->email,
-        'filiere'=>$request->filiere,
-        'fonction'=>$request->fonction
-      ]);
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'contact'=>$request->contact,
+            'email'=>$request->email,
+            'filiere'=>$request->filiere,
+            'fonction'=>$request->fonction
+        ]);
         Session()->flash('success', 'Auteur mis à jour avec success !');    
         return redirect()->route('auteur.index');
     }

@@ -23,3 +23,9 @@ Route::resource('auteur', 'AuteurController');
 
 // Publication
 Route::resource('publication', 'publicationController');
+
+// Interview
+Route::resource('interview', 'InterviewController');
+
+// // FlashInfo
+// Route::resource('flashInfo', 'FlashInfoController');

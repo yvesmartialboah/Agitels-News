@@ -15,6 +15,12 @@
                     @endif
 
                     You are logged in!
+
+                    @membre 
+    
+                        Je suis Un admin
+
+                    @endmembre
                 </div>
             </div>
         </div>

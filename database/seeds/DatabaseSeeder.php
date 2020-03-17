@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
         	UsersTableSeeder::class,
         	typeInterviewSeeder::class,
         	typePublicationSeeder::class,
-            AuthorSeed::class
+            AuthorSeed::class,
+            InterviewSeeder::class,
+            PublicationSeeder::class
         ]);
     }
 }

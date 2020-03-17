@@ -9,7 +9,7 @@
                             <i class="right floated pencil alternate icon"></i>
                             <div class="header">Rédacteurs </div>
                             <div class="meta">Membres du journal l'<b><i>Agitelien</i></b> </div>
-                            <div class="description"><i class="eye icon"></i> <b>15</b> </div>
+                            <div class="description"><i class="eye icon"></i> <b>{{$count_Auth}}</b> </div>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                             <i class="right floated newspaper icon"></i>
                             <div class="header">Publications </div>
                             <div class="meta">Articles <b><i>publiés</i></b> </div>
-                            <div class="description"><i class="eye icon"></i> <b>25</b> </div>
+                            <div class="description"><i class="eye icon"></i> <b>{{$count_Pub}}</b> </div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             <i class="right floated microphone icon"></i>
                             <div class="header">Interviews </div>
                             <div class="meta">Adventure sur le <b><i>terrain</i></b> </div>
-                            <div class="description"><i class="eye icon"></i> <b>45</b> </div>
+                            <div class="description"><i class="eye icon"></i> <b>{{$count_Int}}</b> </div>
                         </div>
                     </div>
                 </div>

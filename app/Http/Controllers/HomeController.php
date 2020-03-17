@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Publication;
+use App\Models\Interview;
+use App\Models\Auteur;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $Publication = Publication::All();
+        $Interview = Interview::All();
+        $Auteur = Auteur::All();
+
+        $count_Pub = count($Publication); // Nombre des articles publiés.
+        $count_Int = count($Interview); // Nombre des interviews effectués.
+        $count_Auth = count($Auteur); // Nombre des auteurs enregistrés.
+
+        return view('home',compact('count_Pub', 'count_Int', 'count_Auth'));
     }
 }

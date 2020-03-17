@@ -24,8 +24,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Route dédiée au administrateurs connu sous le nom de membre (@membre @endmembre)
 
-// Route::middleware('membre')->group(function () {
-//     Route::resource ('category', 'CategoryController', [
-//         'except' => 'show'
-//     ]);
-// });
+Route::middleware('membre')->group(function () {
+	Route::group(['prefix' => 'admin'], function () {
+	    Route::resource ('interview', 'InterviewController', [
+	        //'except' => 'show'
+	    ]);
+    });
+});

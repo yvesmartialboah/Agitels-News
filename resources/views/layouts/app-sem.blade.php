@@ -47,7 +47,7 @@
 	  </a>
 	</div>
 
-    <div class="dimmed pusher">
+    <div class="container pusher">
         <!-- Site content !-->
         @yield('content')
     </div>

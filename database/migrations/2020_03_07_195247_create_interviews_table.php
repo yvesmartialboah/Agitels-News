@@ -16,7 +16,7 @@ class CreateInterviewsTable extends Migration
         Schema::create('interviews', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-            $table->string('description');
+            $table->text('description');
             $table->string('audio_url')->nullable();
             $table->string('video_url')->nullable();
             $table->string('statut')->default('video');

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Profil</title>
+    <title>L'agitélien</title>
     <meta charset="utf-8" />
     <link rel="icon" href="img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -75,11 +75,8 @@
                    Liste des articles
                 </a>
 
-                    <a class="item" href="#">
-                    Liste des interviews Audio
-                </a>
-                    <a class="item" href="#">
-                   Liste des interviews vidéo
+                    <a class="item" href="{{route('interviews.index')}}">
+                    Liste des interviews
                 </a>
                 </div>
                 @endmembre
@@ -185,6 +182,9 @@
     <script src="{{asset('src/plugins/nicescrool/jquery.nicescroll.min.js')}}"></script>
 
     <script data-pace-options='{ "ajax": false }' src="{{asset('src/plugins/pacejs/pace.js')}}"></script>
+
+    <script src="{{asset('src/plugins/datatable/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('src/js/customjs/custom-datatable.js')}}"></script>
 
     <script src="{{asset('src/js/main.js')}}"></script>
     <script>

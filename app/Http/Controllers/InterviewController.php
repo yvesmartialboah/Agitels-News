@@ -17,7 +17,7 @@ class InterviewController extends Controller
      */
     public function index()
     {
-        $Interviews = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->paginate(6);
+        $Interviews = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->get();
         // dd($Interviews);
         return view('administration.Interview.index',compact('Interviews'));
     }
@@ -58,7 +58,7 @@ class InterviewController extends Controller
         'auteur_id'=>$request->auteur_id
         ]);
         Session()->flash("success", "L'interview à été Ajouté avec success !"); 
-        return redirect()->route('interview.index');
+        return redirect()->route('interviews.index');
     }
 
     /**
@@ -112,8 +112,8 @@ class InterviewController extends Controller
         'type_interview_id'=>$request->type_interview_id,
         'auteur_id'=>$request->auteur_id
         ]);
-        Session()->flash("success", "L'interview à été mis à jour avec success !"); 
-        return redirect()->route('interview.index');
+        Session()->flash("message", "L'interview à été mis à jour avec success !"); 
+        return redirect()->route('interviews.index');
     }
 
     /**
@@ -125,7 +125,7 @@ class InterviewController extends Controller
     public function destroy($id)
     {
         Interview::destroy($id);
-        Session()->flash('success', 'Interview Supprimé avec success !');  
-        return redirect()->route('interview.index');
+        Session()->flash("message", "L'Interview à été supprimé avec success !");  
+        return redirect()->route('interviews.index');
     }
 }

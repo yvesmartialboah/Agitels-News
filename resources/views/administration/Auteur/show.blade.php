@@ -1,4 +1,4 @@
-@extends('layouts.app-sem') @section('content')
+@extends('layouts.sidebar-profil') @section('content')
 
 
 

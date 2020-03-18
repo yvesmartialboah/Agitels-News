@@ -26,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('membre')->group(function () {
 	Route::group(['prefix' => 'admin'], function () {
-	    Route::resource ('interview', 'InterviewController', [
+	    Route::resource ('interviews', 'InterviewController', [
 	        //'except' => 'show'
 	    ]);
     });

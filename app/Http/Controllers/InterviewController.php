@@ -17,7 +17,7 @@ class InterviewController extends Controller
      */
     public function index()
     {
-        $Interviews = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->get();
+        $Interviews = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->paginate(6);
         // dd($Interviews);
         return view('administration.Interview.index',compact('Interviews'));
     }

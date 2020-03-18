@@ -19,6 +19,7 @@ class CreateInterviewsTable extends Migration
             $table->string('description');
             $table->string('audio_url')->nullable();
             $table->string('video_url')->nullable();
+            $table->string('statut')->default('video');
             $table->integer('type_interview_id')->unsigned()->references('id')->on('type_interviews')->foreign('type_interview_id')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('auteur_id')->unsigned()->references('id')->on('auteurs')->foreign('auteur_id')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

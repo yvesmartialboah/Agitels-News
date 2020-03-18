@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Interview extends Model
 {
-   protected $fillable = ['libelle', 'description', 'audio_url', 'video_url', 'type_interview_id', 'auteur_id'];
+   protected $fillable = ['libelle', 'statut', 'description', 'audio_url', 'video_url', 'type_interview_id', 'auteur_id'];
 
    public function typeInterview()
     {

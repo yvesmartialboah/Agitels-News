@@ -25,10 +25,12 @@ class InterviewSeeder extends Seeder
         DB::table('interviews')->insert([
             'libelle' => "Rencontre avec le directeur de l'Agence emploi jeune",
             'description' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste in incidunt mollitia facere maxime, fuga.",
-            'audio_url' => "https://www.youtube.com/embed/nf0vCnLzFd4",
+            'audio_url' => "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/363147464&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             'video_url' => "",
             'type_interview_id' => 1, // micro-trottoir
             'auteur_id' => 1,
         ]);
+
+        // Poster les interviews audio sur soundclub et les vidéos sur youtube
     }
 }

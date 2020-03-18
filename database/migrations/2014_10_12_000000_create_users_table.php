@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('role')->default('etudiant');
             $table->string('statut')->nullable();
+            $table->string('sex')->default('M');
+            $table->string('residence')->default('Abidjan');
+            $table->string('fonction')->default('Eleve Ingénieur');
             $table->rememberToken();
             $table->timestamps();
         });

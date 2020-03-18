@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             'email' => "yvesmartialboah@gmail.com",
             'password' => bcrypt('59782245'),
             'role' => "membre",
+            'sex' => "M",
         ]);
 
         DB::table('users')->insert([
@@ -25,6 +26,7 @@ class UsersTableSeeder extends Seeder
             'email' => "elaure@gmail.com",
             'password' => bcrypt('57507938'),
             'role' => "membre",
+            'sex' => "F",
         ]);
 
         DB::table('users')->insert([
@@ -32,14 +34,16 @@ class UsersTableSeeder extends Seeder
             'email' => "samanhugues@gmail.com",
             'password' => bcrypt('88146470'),
             'role' => "membre",
+            'sex' => "M",
         ]);
 
-        DB::table('users')->insert([
-            'name' => "Ahoussi",
-            'email' => "ahoussijeanemmanuel@gmail.com",
-            'password' => bcrypt('01911339'),
-            //'role' => "membre",
-        ]);
+        // DB::table('users')->insert([
+        //     'name' => "Ahoussi",
+        //     'email' => "ahoussijeanemmanuel@gmail.com",
+        //     'password' => bcrypt('01911339'),
+        //     'role' => "membre",
+        //     'sex' => "M",
+        // ]);
 
     }
 }

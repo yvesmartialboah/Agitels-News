@@ -21,7 +21,7 @@
 <div id="contextWrap">
         <!--sidebar-->
         <div class="ui sidebar vertical left menu overlay  borderless visible sidemenu inverted  grey" style="-webkit-transition-duration: 0.1s; transition-duration: 0.1s;" data-color="grey">
-            <a class="item logo" href="index-2.html">
+            <a class="item logo" href="{{route('home')}}">
                 <img src="{{asset('src/img/logo.png')}}" alt="stagblogo" /><img src="{{asset('src/img/thumblogo.png')}}" alt="stagblogo" class="displaynone" />
             </a>
             <div class="ui accordion inverted">
@@ -30,232 +30,70 @@
                     <i class="ion-speedometer titleIcon icon"></i> Dashboard <i class="dropdown icon"></i>
                 </a>
                 <div class="content">
-                    <a class="item" href="index-2.html">
-                    Dashboard v1
+                    <a class="item" href="{{url('/')}}">
+                    Accueil
+                </a><a class="item" href="{{route('home')}}">
+                    Mon Profil
                 </a>
                 </div>
+
+                @membre
 
                 <div class="title item">
                     <i class="ion-ios-lightbulb titleIcon icon"></i>
 
-                    <i class="dropdown icon"></i> Apps
+                    <i class="dropdown icon"></i> Gestion du journal
                 </div>
                 <div class="content">
-                    <a class="item" href="inbox.html">
-                    Inbox
+                    <a class="item" href="#">
+                    Ajouter un rédacteur
                 </a>
 
-                    <a class="item" href="chat.html">
-                    Chat
+                    <a class="item" href="#">
+                   Ajouter un nouvel article
                 </a>
 
-                    <a class="item" href="filter.html">
-                    Filter
+                    <a class="item" href="#">
+                    Ajouter une interview Audio
                 </a>
-                    <a class="item" href="todo.html">
-                    Todo
+                    <a class="item" href="#">
+                   Ajouter une interview vidéo
                 </a>
                 </div>
- 
-            </div>
 
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Dashboard</span>
-                <i class="ion-speedometer icon"></i>
+                  <div class="title item">
+                    <i class="ion-briefcase titleIcon icon"></i>
 
-                <div class="menu">
-                    <div class="header">
-                        Dashboard
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="index-2.html">
-                    Dashboard v1
+                    <i class="dropdown icon"></i> Affichage du Journaux
+                </div>
+                <div class="content">
+                    <a class="item" href="#">
+                    Liste des rédacteurs
+                </a>
+
+                    <a class="item" href="#">
+                   Liste des articles
+                </a>
+
+                    <a class="item" href="#">
+                    Liste des interviews Audio
+                </a>
+                    <a class="item" href="#">
+                   Liste des interviews vidéo
                 </a>
                 </div>
+                @endmembre
             </div>
-
-
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Apps</span>
-                <i class="ion-ios-lightbulb icon"></i>
-                <div class="menu">
-                    <div class="header">
-                        Apps
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="inbox.html">
-                    Inbox
-                </a>
-                    <a class="item" href="filter.html">
-                    Filter
-                </a>
-                    <a class="item" href="todo.html">
-                    Todo
-                </a>
-                </div>
-            </div>
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Layouts</span>
-                <i class="ion-ios-world icon"></i>
-                <div class="menu">
-                    <div class="header">
-                        Layouts
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="sidebar.html">
-                    Sidebar
-                </a>
-                    <a class="item" href="menu.html">
-                    Nav
-                </a>
-                </div>
-            </div>
-            <div class="ui dropdown item displaynone scrolling">
-                <span>UI-Kit</span>
-                <i class="ion-briefcase icon"></i>
-                <div class="menu">
-                    <div class="header">
-                        UI-Kit
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="breadcrumb.html">
-                    Breadcrumb
-                </a>
-                    <a class="item" href="button.html">
-                    Button
-                </a>
-                    <a class="item" href="divider.html">
-                    Divider
-                </a>
-
-                    <a class="item" href="flag.html">
-                    Flag
-                </a>
-                    <a class="item" href="icon.html">
-                    Icon
-                </a>
-                    <a class="item" href="image.html">
-                    Image
-                </a>
-                    <a class="item" href="label.html">
-                    Label
-                </a>
-                    <a class="item" href="list.html">
-                    List
-                </a>
-                </div>
-            </div>
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Pages</span>
-                <i class="ion-bowtie icon"></i>
-
-                <div class="menu">
-                    <div class="header">
-                        Pages
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="profile.html">
-                    Profile
-                </a>
-
-                    <a class="item" href="settings.html">
-                    Settings
-                </a>
-
-                    <a class="item" href="blank.html">
-                    Blank
-                </a>
-                    <a class="item" href="login.html">
-                    Sign In
-                </a>
-                    <a class="item" href="login.html">
-                    Sign Up
-                </a>
-                    <a class="item" href="forgotpassword.html">
-                    Forgot Password
-                </a>
-                    <a class="item" href="lockme.html">
-                    Lock Me Screen
-                </a>
-                    <a class="item" href="404.html">
-                    Error 404
-                </a>
-                    <a class="item" href="comingsoon.html">
-                    Coming Soon
-                </a>
-                </div>
-            </div>
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Form</span>
-                <i class="ion-paintbrush  icon"></i>
-
-                <div class="menu">
-                    <div class="header">
-                        Form
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="formelements.html">
-                    Form Element
-                </a>
-                    <a class="item" href="input.html">
-                    Input
-                </a>
-                    <a class="item" href="formvalidation.html">
-                    Form Validation
-                </a>
-
-                    <a class="item" href="editor.html">
-                    Html Editor
-                </a>
-                </div>
-            </div>
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Table</span>
-                <i class="ion-flame icon"></i>
-
-                <div class="menu">
-                    <div class="header">
-                        Table
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="table.html">
-                    Static Table
-                </a>
-                    <a class="item" href="datatable.html">
-                    Datatable
-                </a>
-                    <a class="item" href="editable.html">
-                    Editable
-                </a>
-                </div>
-            </div>
-            <div class="ui dropdown item displaynone scrolling">
-                <span>Charts</span>
-                <i class="ion-arrow-graph-up-right icon"></i>
-
-                <div class="menu">
-                    <div class="header">
-                        Charts
-                    </div>
-                    <div class="ui divider"></div>
-                    <a class="item" href="chart.html">
-                    Charts 1
-                </a>
-                    <a class="item" href="chart-2.html">
-                    Charts 2
-                </a>
-
-                </div>
-            </div>
+            @membre
             <div class="ui divider"></div>
-            <a class="item" href="typography.html">
-                <i class="ion-printer icon"></i> <span class="colhidden">Typography</span>
+            <a class="item" href="#">
+                <i class="ion-printer icon"></i> <span class="colhidden">-----</span>
             </a>
-            <a class="item" href="document.html">
-                <i class="ion-code icon"></i> <span class="colhidden">Document</span>
+            <a class="item" href="#">
+                <i class="ion-code icon"></i> <span class="colhidden">-----</span>
             </a>
+            @endmembre
             <div class="ui divider"></div>
-                
         </div>
 
 
@@ -282,7 +120,7 @@
                             <div class="ui red label mini circular">6</div>
                             <div class="menu">
                                 <div class="header">
-                                    People You Might Know
+                                   Liste des notifications
                                 </div>
                                 <div class="item">
                                     <img class="ui avatar image" src="src/img/avatar/people/enid.png" alt="label-image" /> Janice Robinson
@@ -300,14 +138,29 @@
                             </div>
                         </div> -->
                         <div class="ui dropdown item">
+                             @if(Auth::user()->sex == "M")
+                            <img class="ui mini circular image" src="{{asset('src/img/avatar/people/Daryl.png')}}" alt="label-image" />
+                            @else
                             <img class="ui mini circular image" src="{{asset('src/img/avatar/people/enid.png')}}" alt="label-image" />
+                            @endif
                             <div class="menu">
-                                <a class="item" href="mail.html">Inbox</a>
-                                <a class="item" href="profile.html">Profile</a>
-                                <a class="item" href="settings.html">Settings</a>
+                                  @guest
+                                <a class="item" href="{{ route('login') }}">Connexion</a>
+                                  @if (Route::has('register'))
+                                <a class="item" href="{{ route('register') }}">Inscription</a>
+                                  @endif
+                                @else
+                                <!-- <a class="item" href="settings.html">Settings</a> -->
                                 <div class="ui divider"></div>
-                                <a class="item">Need Help?</a>
-                                <a class="item" href="login.html">Sign Out</a>
+                                <a class="item">Souhaitez vous, vous déconnectez ?</a>
+                                <a class="item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                         Déconnexion
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                @endguest
                             </div>
                         </div>
                     

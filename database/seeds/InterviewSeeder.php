@@ -20,6 +20,7 @@ class InterviewSeeder extends Seeder
             'video_url' => "https://www.youtube.com/embed/dF78ixCB6qo",
             'type_interview_id' => 2, // A la découverte
             'auteur_id' => 1,
+            'statut' => 'video',
         ]);
 
         DB::table('interviews')->insert([
@@ -29,6 +30,7 @@ class InterviewSeeder extends Seeder
             'video_url' => "",
             'type_interview_id' => 1, // micro-trottoir
             'auteur_id' => 1,
+            'statut' => 'audio',
         ]);
 
         // Poster les interviews audio sur soundclub et les vidéos sur youtube

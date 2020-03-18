@@ -5,7 +5,7 @@ Il faut exécuter les commandes de migrations et les seeds préalablement enregi
 - php artisan migrate
 - php artisan db:seed
 
-Laravel est accessible, puissant, et fournit les outils nécessaires à des applications importantes et robustes.
+
 
 
 ## Vulnérabilités en matière de sécurité

@@ -12,18 +12,20 @@
                         <div class="ui items">
                             <div class="item">
                                 <a class="ui small circular image">
-
+                                    @if(Auth::user()->sex == "M")
                                     <img src="src/img/avatar/people/Daryl.png" alt="label-image" />
-                                    <!-- <img src="src/img/avatar/people/Meggie.png" alt="label-image" /> -->
+                                    @else
+                                    <img src="src/img/avatar/people/Meggie.png" alt="label-image" />
+                                    @endif
                                     <i class="circle mini red icon avt" data-content="Offline" data-variation="inverted redli"></i>
                                 </a>
                                 <div class="middle aligned content hiddenui">
                                     <div class="header">
                                         <i class="like icon"></i>
-                                        Jennifer Clarke
+                                        {{Auth::user()->name}}
                                     </div>
                                     <div class="meta">
-                                        Teacher, <i class="icon map marker"></i> London U.K.
+                                        {{Auth::user()->fonction}}, <i class="icon map marker"></i> {{Auth::user()->residence}}
                                     </div>
                                 </div>
                             </div>

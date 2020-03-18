@@ -67,11 +67,11 @@
                     <i class="dropdown icon"></i> Affichage du Journaux
                 </div>
                 <div class="content">
-                    <a class="item" href="#">
+                    <a class="item" href="{{route('auteurs.index')}}">
                     Liste des rédacteurs
                 </a>
 
-                    <a class="item" href="#">
+                    <a class="item" href="{{route('publications.index')}}">
                    Liste des articles
                 </a>
 

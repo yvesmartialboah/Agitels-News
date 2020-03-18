@@ -61,7 +61,7 @@ class AuteurController extends Controller
         'fonction'=>$request->fonction
         ]);
         Session()->flash('success', 'Auteur Ajouté avec success !'); 
-        return redirect()->route('auteur.index');
+        return redirect()->route('auteurs.index');
     }
 
     /**
@@ -112,8 +112,8 @@ class AuteurController extends Controller
             'filiere'=>$request->filiere,
             'fonction'=>$request->fonction
         ]);
-        Session()->flash('success', 'Auteur mis à jour avec success !');    
-        return redirect()->route('auteur.index');
+        Session()->flash('message', 'Auteur mis à jour avec success !');    
+        return redirect()->route('auteurs.index');
     }
 
     /**
@@ -125,7 +125,7 @@ class AuteurController extends Controller
     public function destroy($id)
     {
         Auteur::destroy($id);
-        Session()->flash('success', 'Auteur Supprimé avec success !');  
-        return redirect()->route('auteur.index');
+        Session()->flash("message", "L'Auteur à bien été supprimé avec success !");  
+        return redirect()->route('auteurs.index');
     }
 }

@@ -69,7 +69,7 @@ class publicationController extends Controller
         'contenu'=>$request->contenu
         ]);
         Session()->flash('success', 'La Publication à été Ajouté avec success !'); 
-        return redirect()->route('publication.index');
+        return redirect()->route('publications.index');
     }
 
     /**
@@ -143,8 +143,8 @@ class publicationController extends Controller
 
         }  
         
-        Session()->flash('success', 'La Publication à été mise à jour avec success !'); 
-        return redirect()->route('publication.index');
+        Session()->flash('message', 'La Publication à été mise à jour avec success !'); 
+        return redirect()->route('publications.index');
     }
 
     /**
@@ -156,7 +156,7 @@ class publicationController extends Controller
     public function destroy($id)
     {
         Publication::destroy($id);
-        Session()->flash('success', 'Publication Supprimé avec success !');  
-        return redirect()->route('publication.index');
+        Session()->flash("message", "L'article à bien été supprimé avec success !");  
+        return redirect()->route('publications.index');
     }
 }

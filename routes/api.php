@@ -19,10 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // Auteur
-Route::resource('auteur', 'AuteurController');
+// Route::resource('auteur', 'AuteurController');
 
 // Publication
-Route::resource('publication', 'publicationController');
+// Route::resource('publication', 'publicationController');
 
 // Interview
-Route::resource('interview', 'InterviewController');
+// Route::resource('interview', 'InterviewController');

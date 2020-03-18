@@ -29,5 +29,7 @@ Route::middleware('membre')->group(function () {
 	    Route::resource ('interviews', 'InterviewController', [
 	        //'except' => 'show'
 	    ]);
+	    Route::resource('publications', 'publicationController');
+	    Route::resource('auteurs', 'AuteurController');
     });
 });

@@ -20,7 +20,7 @@
                         <div class="ui segments">
                             <div class="ui segment">
                                         <h5 class="ui header">
-                                            Ajouter une interview <strong>Video</strong>
+                                            Ajouter une interview <strong class="text-warning">Video</strong>
                                         </h5>
                                         <a href="{{route('interviews.index')}}">
                                             <button class="ui lightbrownli  button">Voir la liste</button>
@@ -96,7 +96,7 @@
                                             </div>
 
                                             <div class="field">
-                                                <label>video_url (embed)</label>
+                                                <label>Url Vidéo <strong class="text-warning"> (embed) </strong></label>
                                                 <div class="ui labeled input fluid">
                                                     <div class="ui label">
                                                         http://
@@ -129,7 +129,7 @@
                         <div class="ui segments">
                             <div class="ui segment">
                                         <h5 class="ui header">
-                                            Ajouter une interview <strong>Audio</strong>
+                                            Ajouter une interview <strong class="text-warning">Audio</strong>
                                         </h5>
                                         <a href="{{route('interviews.index')}}">
                                             <button class="ui lightbrownli  button">Voir la liste</button>
@@ -205,7 +205,7 @@
                                             </div>
 
                                             <div class="field">
-                                                <label>audio_url <strong>(embed)</strong></label>
+                                                <label>Url Audio <strong class="text-warning"> (embed) </strong></label>
                                                 <div class="ui labeled input fluid">
                                                     <div class="ui label">
                                                         http://

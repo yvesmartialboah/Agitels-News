@@ -84,7 +84,7 @@ class InterviewController extends Controller
     {
         $typeInterview = typeInterview::OrderBy('id','desc')->get();
         $Auteur = Auteur::OrderBy('id','desc')->get();
-        $Interview=Interview::findOrFail($id);
+        $Interview = Interview::findOrFail($id);
         return view('administration.Interview.edit',compact('Interview','typeInterview','Auteur'));
     }
 

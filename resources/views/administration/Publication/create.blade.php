@@ -10,7 +10,7 @@
             
                         <div class="row">
                             <div class="ten wide column">
-                            			<div class="ui segments">
+                            	<div class="ui segments">
                                     <div class="ui segment">
                                         <h5 class="ui header">
                                             Ajouter un article

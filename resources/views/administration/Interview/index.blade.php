@@ -16,17 +16,45 @@
                                         <h5 class="ui header">
                                             Liste des Inverviews 
                                         </h5>
-                                        @if(session()->has('message'))
+                                        <a href="{{route('interviews.create')}}">
+                                            <button class="ui lightbrownli  button">Ajouter un interview</button>
+                                        </a>
+                                        @if(session()->has('delete'))
                                             <div class="ui icon message inverted redli">
                                                 <i class="alarm icon"></i>
                                                 <div class="content">
                                                     <div class="header">
-                                                        {{ session()->get('message') }}
+                                                        {{ session()->get('delete') }}
+                                                    </div>
+                                                    <!-- <p>{{ session()->get('delete') }}</p> -->
+                                                </div>
+                                            </div>
+                                        @endif
+
+                                        @if(session()->has('create'))
+                                            <div class="ui icon message inverted greenli">
+                                                <i class="alarm icon"></i>
+                                                <div class="content">
+                                                    <div class="header">
+                                                        {{ session()->get('create') }}
+                                                    </div>
+                                                    <!-- <p>{{ session()->get('create') }}</p> -->
+                                                </div>
+                                            </div>
+                                        @endif 
+
+                                        @if(session()->has('update'))
+                                            <div class="ui icon message inverted greenli">
+                                                <i class="alarm icon"></i>
+                                                <div class="content">
+                                                    <div class="header">
+                                                        {{ session()->get('update') }}
                                                     </div>
                                                     <!-- <p>{{ session()->get('message') }}</p> -->
                                                 </div>
                                             </div>
                                         @endif
+
 
                                     </div>
                                     <div class="ui segment">

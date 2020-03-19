@@ -55,9 +55,10 @@ class InterviewController extends Controller
         'audio_url'=>$request->audio_url,
         'video_url'=>$request->video_url,
         'type_interview_id'=>$request->type_interview_id,
-        'auteur_id'=>$request->auteur_id
+        'auteur_id'=>$request->auteur_id,
+        'statut'=>$request->statut,
         ]);
-        Session()->flash("success", "L'interview à été Ajouté avec success !"); 
+        Session()->flash("create", "L'interview à été Ajouté avec success !"); 
         return redirect()->route('interviews.index');
     }
 
@@ -84,7 +85,7 @@ class InterviewController extends Controller
         $typeInterview = typeInterview::OrderBy('id','desc')->get();
         $Auteur = Auteur::OrderBy('id','desc')->get();
         $Interview=Interview::findOrFail($id);
-        return view('administration.Interview.show',compact('Interview','typeInterview','Auteur'));
+        return view('administration.Interview.edit',compact('Interview','typeInterview','Auteur'));
     }
 
     /**
@@ -110,9 +111,10 @@ class InterviewController extends Controller
         'audio_url'=>$request->audio_url,
         'video_url'=>$request->video_url,
         'type_interview_id'=>$request->type_interview_id,
-        'auteur_id'=>$request->auteur_id
+        'auteur_id'=>$request->auteur_id,
+        'statut'=>$request->statut,
         ]);
-        Session()->flash("message", "L'interview à été mis à jour avec success !"); 
+        Session()->flash("update", "L'interview à été mis à jour avec success !"); 
         return redirect()->route('interviews.index');
     }
 
@@ -125,7 +127,7 @@ class InterviewController extends Controller
     public function destroy($id)
     {
         Interview::destroy($id);
-        Session()->flash("message", "L'Interview à été supprimé avec success !");  
+        Session()->flash("delete", "L'Interview à été supprimé avec success !");  
         return redirect()->route('interviews.index');
     }
 }

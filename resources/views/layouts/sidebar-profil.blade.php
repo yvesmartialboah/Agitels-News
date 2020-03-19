@@ -60,12 +60,10 @@
                    Ajouter un FlashInfo
                 </a>
 
-                    <a class="item" href="#">
-                    Ajouter une interview Audio
+                <a class="item" href="{{route('interviews.create')}}">
+                    Ajouter une interview
                 </a>
-                    <a class="item" href="#">
-                   Ajouter une interview vidéo
-                </a>
+
                 </div>
 
                   <div class="title item">

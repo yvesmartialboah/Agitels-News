@@ -16,12 +16,37 @@
                                         <h5 class="ui header">
                                             Liste des Auteurs 
                                         </h5>
+                                        <a href="{{route('auteurs.create')}}">
+                                            <button class="ui blueli button">Ajouter</button>
+                                        </a>
                                         @if(session()->has('message'))
                                             <div class="ui icon message inverted redli">
                                                 <i class="alarm icon"></i>
                                                 <div class="content">
                                                     <div class="header">
                                                         {{ session()->get('message') }}
+                                                    </div>
+                                                    <!-- <p>{{ session()->get('message') }}</p> -->
+                                                </div>
+                                            </div>
+                                        @endif
+                                        @if(session()->has('create'))
+                                            <div class="ui icon message inverted greenli">
+                                                <i class="alarm icon"></i>
+                                                <div class="content">
+                                                    <div class="header">
+                                                        {{ session()->get('create') }}
+                                                    </div>
+                                                    <!-- <p>{{ session()->get('message') }}</p> -->
+                                                </div>
+                                            </div>
+                                        @endif
+                                        @if(session()->has('update'))
+                                            <div class="ui icon message inverted orange">
+                                                <i class="alarm icon"></i>
+                                                <div class="content">
+                                                    <div class="header">
+                                                        {{ session()->get('update') }}
                                                     </div>
                                                     <!-- <p>{{ session()->get('message') }}</p> -->
                                                 </div>
@@ -38,6 +63,7 @@
                                                     <th>Addresse Mail</th>
                                                     <th>Filière</th>
                                                     <th>Fonction</th>
+                                                    <th>Modifier</th>
                                                     <th>Supprimer</th>
                                                 </tr>
                                             </thead>
@@ -55,6 +81,13 @@
                                                     </td>
                                                     <td>{{$redacteur->filiere}}</td>
                                                     <td>{{$redacteur->fonction}}</td>
+                                                    <td>
+                                                        <a href="{{route('auteurs.edit', $redacteur)}}">
+                                                            <button class="ui orange button">
+                                                                <i class="pencil icon ui dark"></i>
+                                                            </button>
+                                                        </a>
+                                                    </td>
                                                     <td>
                                                         <form action = "{{ route('auteurs.destroy',$redacteur) }}"
                                                             method = "POST"

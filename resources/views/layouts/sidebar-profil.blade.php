@@ -45,11 +45,11 @@
                     <i class="dropdown icon"></i> Gestion du journal
                 </div>
                 <div class="content">
-                    <a class="item" href="#">
+                    <a class="item" href="{{route('auteurs.create')}}">
                     Ajouter un rédacteur
                 </a>
 
-                    <a class="item" href="#">
+                    <a class="item" href="{{route('publications.create')}}">
                    Ajouter un nouvel article
                 </a>
 
@@ -64,7 +64,7 @@
                   <div class="title item">
                     <i class="ion-briefcase titleIcon icon"></i>
 
-                    <i class="dropdown icon"></i> Affichage du Journaux
+                    <i class="dropdown icon"></i> Affichage du Journal
                 </div>
                 <div class="content">
                     <a class="item" href="{{route('auteurs.index')}}">

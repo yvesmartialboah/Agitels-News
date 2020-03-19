@@ -49,7 +49,10 @@ class AuteurController extends Controller
         $this->validate($request,[
            'nom'=>'Required',
            'prenom'=>'Required',
-           'contact'=>'Required'
+           'contact'=>'Required',
+           'email'=>'Required',
+           'filiere'=>'Required',
+           'fonction'=>'Required',
         ]);
 
         Auteur::create([
@@ -60,7 +63,7 @@ class AuteurController extends Controller
         'filiere'=>$request->filiere,
         'fonction'=>$request->fonction
         ]);
-        Session()->flash('success', 'Auteur Ajouté avec success !'); 
+        Session()->flash("create", "L'auteur à bien été ajouté avec success !"); 
         return redirect()->route('auteurs.index');
     }
 
@@ -100,7 +103,10 @@ class AuteurController extends Controller
         $this->validate($request,[
            'nom'=>'Required',
            'prenom'=>'Required',
-           'contact'=>'Required'
+           'contact'=>'Required',
+           'email'=>'Required',
+           'filiere'=>'Required',
+           'fonction'=>'Required',
         ]);
 
         $Auteur = Auteur::findOrFail($id);
@@ -112,7 +118,7 @@ class AuteurController extends Controller
             'filiere'=>$request->filiere,
             'fonction'=>$request->fonction
         ]);
-        Session()->flash('message', 'Auteur mis à jour avec success !');    
+        Session()->flash("update", "L'auteur à bien été mis à jour avec success !");    
         return redirect()->route('auteurs.index');
     }
 
@@ -125,7 +131,7 @@ class AuteurController extends Controller
     public function destroy($id)
     {
         Auteur::destroy($id);
-        Session()->flash("message", "L'Auteur à bien été supprimé avec success !");  
+        Session()->flash("message", "L'auteur à bien été supprimé avec success !");  
         return redirect()->route('auteurs.index');
     }
 }

@@ -1,0 +1,9 @@
+// $collection = collect($typePublication);
+        // Retrieve all items from the collect
+        // $publication_filtrer = $collection->except([0]); // Except Flash Info 
+       // $flash_filtrer = $collection->except([1,2,3,4,5,6,7,8]); // Except Flash Info 
+
+        // dd($flash_filtrer);
+        // dd($Auteur);
+        // dd($publication_filtrer);
+        //dd($typePublication);

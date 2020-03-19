@@ -30,6 +30,7 @@ Route::middleware('membre')->group(function () {
 	        //'except' => 'show'
 	    ]);
 	    Route::resource('publications', 'publicationController');
+	    Route::resource('flash', 'FlashController');
 	    Route::resource('auteurs', 'AuteurController');
     });
 });

@@ -14,19 +14,31 @@
                                 <div class="ui segments">
                                     <div class="ui segment">
                                         <h5 class="ui header">
-                                            Liste des articles 
+                                            Liste des infos 
                                         </h5>
-                                        <a href="{{route('publications.create')}}">
-                                            <button class="ui lightbrownli  button">Ajouter un nouvel article</button>
+                                        <a href="{{route('flash.create')}}">
+                                            <button class="ui lightbrownli  button">Ajouter une nouvelle info</button>
                                         </a>
-                                        @if(session()->has('message'))
+                                        @if(session()->has('create'))
+                                            <div class="ui icon message inverted greenli">
+                                                <i class="alarm icon"></i>
+                                                <div class="content">
+                                                    <div class="header">
+                                                        {{ session()->get('create') }}
+                                                    </div>
+                                                    <!-- <p>{{ session()->get('create') }}</p> -->
+                                                </div>
+                                            </div>
+                                        @endif 
+
+                                         @if(session()->has('delete'))
                                             <div class="ui icon message inverted redli">
                                                 <i class="alarm icon"></i>
                                                 <div class="content">
                                                     <div class="header">
-                                                        {{ session()->get('message') }}
+                                                        {{ session()->get('delete') }}
                                                     </div>
-                                                    <!-- <p>{{ session()->get('message') }}</p> -->
+                                                    <!-- <p>{{ session()->get('delete') }}</p> -->
                                                 </div>
                                             </div>
                                         @endif 
@@ -38,55 +50,40 @@
                                                     <div class="header">
                                                         {{ session()->get('update') }}
                                                     </div>
-                                                    <!-- <p>{{ session()->get('message') }}</p> -->
+                                                    <!-- <p>{{ session()->get('update') }}</p> -->
                                                 </div>
                                             </div>
                                         @endif
+
 
                                     </div>
                                     <div class="ui segment">
                                         <table id="data_table" class="ui compact selectable striped celled table tablet stackable" cellspacing="0" width="100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Libelle de l'article</th>
-                                                    <th>Date de publication</th>
                                                     <th>Description</th>
-                                                    <th>Type d'article</th>
-                                                    <th>Auteur</th>
+                                                    <th>Date de publication</th>
                                                     <th>Modifier</th>
                                                     <th>Supprimer</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                @foreach($Publication as $Pub)
+                                                @foreach($flash as $Pub)
                                                 <tr>
-                                                    <td>{{$Pub->libelle}}</td>
+                                                    <td>{{$Pub->flashinfo}}</td>
                                                     <td>
                                                         {{date('d-m-Y', strtotime($Pub->created_at)) }}
                                                     </td>
-                                                    <td>
-                                                        <!-- <img class="ui small image" src="../../image_publication/{{$Pub->image}}" alt=""> -->
-                                                        <!-- {{$Pub->contenu}} -->
-                                                        <!-- {!! Str::limit($Pub->contenu, 50, ' ...') !!} -->
-                                                        <!-- <br> -->
-                                                        <a href="{{route('publications.show', $Pub->id)}}">
-                                                            <button class="ui blueli  button">aperçu de l'article</button>
-                                                        </a>
-                                                    
-                                                       <br> 
-                                                    </td>
-                                                    <td>{{$Pub->typePublication->libelle}}</td>
-                                                    <td>{{$Pub->Auteur->nom}} {{$Pub->Auteur->prenom}}</td>
                                                     <td> 
-                                                        <a href="{{route('publications.edit',$Pub->id)}}">
+                                                        <a href="{{route('flash.edit',$Pub->id)}}">
                                                             <button class="ui brown button">
                                                                 <i class="pencil alternate icon ui dark"></i>
                                                             </button>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <form action = "{{ route('publications.destroy',$Pub) }}"
+                                                        <form action = "{{ route('flash.destroy',$Pub) }}"
                                                             method = "POST"
                                                             onsubmit = "return confirm('Êtes vous sûre ?')"; >
                                                             {{ csrf_field() }}

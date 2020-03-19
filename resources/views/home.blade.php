@@ -1,6 +1,5 @@
 @extends('layouts.sidebar-profil') @section('content')
 
-
             <!--maincontent-->
         <div class="mainWrap navslide profilepage">
             <div class="ui equal width left aligned padded grid stackable">

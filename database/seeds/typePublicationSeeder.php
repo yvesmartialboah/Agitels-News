@@ -44,10 +44,6 @@ class typePublicationSeeder extends Seeder
         DB::table('type_publications')->insert([
             'libelle' => "Portail des entreprises"
         ]);
-
-        DB::table('type_publications')->insert([
-            'libelle' => "Flash Info"
-        ]);
         
     }
 }

@@ -12,6 +12,9 @@
     <link href="{{asset('src/css/main.css')}}" rel="stylesheet" />
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link href="{{asset('src/plugins/pacejs/pace.css')}}" rel="stylesheet" />
+
+    <link href="{{asset('src/plugins/trumbowyg/ui/trumbowyg.css')}}" rel="stylesheet" />
+    <link href="{{asset('src/plugins/tinymce/skins/lightgray/skin.min.css')}}" rel="stylesheet" />
     
 </head>
 <body>
@@ -49,8 +52,12 @@
                     Ajouter un rédacteur
                 </a>
 
-                    <a class="item" href="{{route('publications.create')}}">
+                <a class="item" href="{{route('publications.create')}}">
                    Ajouter un nouvel article
+                </a>
+
+                <a class="item" href="{{route('flash.create')}}">
+                   Ajouter un FlashInfo
                 </a>
 
                     <a class="item" href="#">
@@ -71,8 +78,12 @@
                     Liste des rédacteurs
                 </a>
 
-                    <a class="item" href="{{route('publications.index')}}">
+                <a class="item" href="{{route('publications.index')}}">
                    Liste des articles
+                </a>
+
+                <a class="item" href="{{route('flash.index')}}">
+                   Liste des FlashInfos
                 </a>
 
                     <a class="item" href="{{route('interviews.index')}}">
@@ -185,6 +196,11 @@
 
     <script src="{{asset('src/plugins/datatable/jquery.dataTables.js')}}"></script>
     <script src="{{asset('src/js/customjs/custom-datatable.js')}}"></script>
+
+    <script src="{{asset('src/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('src/plugins/trumbowyg/trumbowyg.js')}}"></script>
+    <script src="{{asset('src/plugins/tinymce/themes/modern/theme.min.js')}}"></script>
+     <script src="{{asset('src/js/customjs/custom-editor.js')}}"></script>
 
     <script src="{{asset('src/js/main.js')}}"></script>
     <script>

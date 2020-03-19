@@ -51,16 +51,19 @@
                                                         {{date('d-m-Y', strtotime($Interview->created_at)) }}
                                                     </td>
                                                     <td>
-                                                        @if($Interview->statut == 'video')
+                                                         <a href="{{route('interviews.show', $Interview->id)}}">
+                                                            <button class="ui blueli  button">aperçu de l'article</button>
+                                                        </a>
+             <!--                                            @if($Interview->statut == 'video')
                     <iframe width="100%" height="200" src="{{$Interview->video_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     @else 
                     <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="{{$Interview->audio_url}}"></iframe>
                     @endif
-                        <br>
+                        <br> -->
                                                         <!-- {{$Interview->description}} -->
-                                                        {!! Str::limit($Interview->description, 450, ' ...') !!}
+                                                        <!-- {!! Str::limit($Interview->description, 450, ' ...') !!} -->
                                                     
-                                                       <br> 
+                                                       <!-- <br>  -->
                                                     </td>
                                                     <td>{{$Interview->typeInterview->libelle}}</td>
                                                     <td>{{$Interview->Auteur->nom}} {{$Interview->Auteur->prenom}}</td>

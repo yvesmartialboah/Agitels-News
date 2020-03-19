@@ -31,7 +31,8 @@ class publicationController extends Controller
     {
         $typePublication = typePublication::OrderBy('id','desc')->get();
         $Auteur = Auteur::OrderBy('id','desc')->get();
-        return view('administration.Publication.create',compact('typePublication', 'Auteur'));
+        $publication_filtrer = $typePublication;  
+        return view('administration.Publication.create',compact('typePublication', 'Auteur', 'publication_filtrer'));
     }
 
     /**
@@ -56,7 +57,7 @@ class publicationController extends Controller
             // Obtenir l'extension
             // dd($image );
             $nomAvatar = time().'.'.$image->getClientOriginalExtension();
-            // time() génère un nom aléatoire
+            // time() génère un nom aléatoire_ç
             $image->move(public_path("image_publication"), $nomAvatar );
             // $image->move(base_path("image_publication"), $nomAvatar );
         }  
@@ -66,7 +67,8 @@ class publicationController extends Controller
         'type_publication_id'=>$request->type_publication_id,
         'auteur_id'=>$request->auteur_id,
         'image'=>$nomAvatar,
-        'contenu'=>$request->contenu
+        'contenu'=>$request->contenu,
+        'flashinfo'=>$request->flashinfo
         ]);
         Session()->flash('success', 'La Publication à été Ajouté avec success !'); 
         return redirect()->route('publications.index');
@@ -92,8 +94,14 @@ class publicationController extends Controller
      */
     public function edit($id)
     {
-        $Publication=Publication::findOrFail($id);
-        return view('administration.Publication.edit',compact('Publication'));
+        $typePublication = typePublication::OrderBy('id','desc')->get();
+        $Auteur = Auteur::OrderBy('id','desc')->get();
+        $collection = collect($typePublication);
+        // Retrieve all items from the collect
+        $publication_filtrer = $collection->except([0,2]); // Except Flash Info & Anglais
+        $Publication=Publication::with('typePublication','Auteur')->findOrFail($id);
+        // dd($Publication);
+        return view('administration.Publication.edit',compact('Publication', 'publication_filtrer', 'Auteur'));
     }
 
     /**
@@ -113,24 +121,19 @@ class publicationController extends Controller
         ]);
 
         if($request->image == null){
-
             $Publication=Publication::findOrFail($id);
-            $Publication->update([
-                'libelle'=>$request->libelle,
-                'contenu'=>$request->contenu,
-                'type_publication_id'=>$request->type_publication_id,
-                'auteur_id'=>$request->auteur_id,
-            ]);
-
+            // dd($Publication->image);die(); // Vérification de l'image
+            $nomAvatar = $Publication->image;
         }else{
-
             $image = $request->file('image');
             // Obtenir l'extension
             // dd($image );
             $nomAvatar = time().'.'.$image->getClientOriginalExtension();
-            // time() génère un nom aléatoire
+            // time() génère un nom aléatoire_ç
             $image->move(public_path("image_publication"), $nomAvatar );
             // $image->move(base_path("image_publication"), $nomAvatar );
+        } 
+
             $Publication=Publication::findOrFail($id);
             // dd($request->libelle);
             $Publication->update([
@@ -140,10 +143,9 @@ class publicationController extends Controller
                 'type_publication_id'=>$request->type_publication_id,
                 'auteur_id'=>$request->auteur_id,
             ]);
-
-        }  
+ 
         
-        Session()->flash('message', 'La Publication à été mise à jour avec success !'); 
+        Session()->flash('update', 'La Publication à été mise à jour avec success !'); 
         return redirect()->route('publications.index');
     }
 

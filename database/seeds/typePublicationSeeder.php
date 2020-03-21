@@ -38,7 +38,7 @@ class typePublicationSeeder extends Seeder
         ]);
 
         DB::table('type_publications')->insert([
-            'libelle' => "anglais"
+            'libelle' => "Anglais"
         ]);
 
         DB::table('type_publications')->insert([

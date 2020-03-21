@@ -15,7 +15,11 @@
                                     <button class="ui lightbrownli  button">Voir la liste</button>
                                 </a>
                                 <br>
-                            		<img class="ui small image" src="../../image_publication/{{$Publication->image}}" alt="">
+                                @if($Publication->type_publication_id == 7)
+                            	<img class="ui small image" src="../../Ang640x480/{{$Publication->image}}" alt="">
+                                @else
+                                <img class="ui small image" src="../../image_publication/{{$Publication->image}}" alt="">
+                                @endif
                                         {!! $Publication->contenu !!}	
                             </div>
                         </div>

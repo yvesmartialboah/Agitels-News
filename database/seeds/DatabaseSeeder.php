@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         	typePublicationSeeder::class,
             AuthorSeed::class,
             InterviewSeeder::class,
-            PublicationSeeder::class
+            PublicationSeeder::class,
+            FlashSeeder::class
         ]);
     }
 }

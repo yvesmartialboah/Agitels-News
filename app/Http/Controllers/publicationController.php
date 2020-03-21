@@ -50,8 +50,15 @@ class publicationController extends Controller
            'contenu'=>'Required'
         ]);
 
-        if($request->image == null){
-            $nomAvatar = null;
+        if($request->type_publication_id == 7 && $request->image == null || $request->image == null) // Anglais
+        {
+            $inputArray = [
+                '0.jpg',
+                '1.jpg',
+                '2.jpg'
+            ];
+            $randomItems = array_rand($inputArray);
+            $nomAvatar = $randomItems.'.jpg';
         }else{
             $image = $request->file('image');
             // Obtenir l'extension
@@ -70,7 +77,7 @@ class publicationController extends Controller
         'contenu'=>$request->contenu,
         'flashinfo'=>$request->flashinfo
         ]);
-        Session()->flash('success', 'La Publication à été Ajouté avec success !'); 
+        Session()->flash('create', 'La Publication à été Ajouté avec success !'); 
         return redirect()->route('publications.index');
     }
 
@@ -120,7 +127,15 @@ class publicationController extends Controller
            'contenu'=>'Required'
         ]);
 
-        if($request->image == null){
+        if($request->type_publication_id == 7 && $request->image == null || $request->image == null) // Anglais
+        {
+            $inputArray = [
+                '0.jpg',
+                '1.jpg',
+                '2.jpg'
+            ];
+            $randomItems = array_rand($inputArray);
+            $nomAvatar = $randomItems.'.jpg';
             $Publication=Publication::findOrFail($id);
             // dd($Publication->image);die(); // Vérification de l'image
             $nomAvatar = $Publication->image;
@@ -158,7 +173,7 @@ class publicationController extends Controller
     public function destroy($id)
     {
         Publication::destroy($id);
-        Session()->flash("message", "L'article à bien été supprimé avec success !");  
+        Session()->flash("delete", "L'article à bien été supprimé avec success !");  
         return redirect()->route('publications.index');
     }
 }

@@ -25,8 +25,9 @@ class internauteController extends Controller
         $AvouslHonneur_slide = Publication::with('typePublication','Auteur')->where('type_publication_id',4)->OrderBy('id','desc')->take(1)->first();
         $Reportage_slide = Publication::with('typePublication','Auteur')->where('type_publication_id',2)->OrderBy('id','desc')->take(1)->first();
         $Lecondevie_slide = Publication::with('typePublication','Auteur')->where('type_publication_id',5)->OrderBy('id','desc')->take(1)->first();
+        $Interview_present = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->take(3)->get();
 
-        // dd($Anglais_slide);
-    	return view('Internaute.accueil',compact('flash', 'Anglais_slide', 'AvouslHonneur_slide', 'Reportage_slide', 'Lecondevie_slide'));
+        // dd($Interview_present);
+    	return view('Internaute.accueil',compact('flash', 'Anglais_slide', 'AvouslHonneur_slide', 'Reportage_slide', 'Lecondevie_slide', 'Interview_present'));
     }
 }

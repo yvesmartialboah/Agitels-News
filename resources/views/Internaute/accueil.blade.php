@@ -1,48 +1,6 @@
 @extends('layouts.navbar-internaute') @section('content')
 
-<section class="bg-accent border-bottom add-top-margin">
-                <div class="container">
-                    <div class="row no-gutters d-flex align-items-center">
-                        <div class="col-lg-2 col-md-3 col-sm-4 col-5">
-                            <div class="topic-box mt-4 mb-5">Flash Info</div>
-                        </div>
-                        <div class="col-lg-10 col-md-9 col-sm-8 col-7">
-                            <div class="feeding-text-dark">
-                                <ol id="sample" class="ticker">
-                                   @foreach($flash as $flashy)
-                                    <li>
-                                        <a href="#">{{$flashy->flashinfo}}</a>
-                                    </li>
-                                    @endforeach
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-<!--cece provient de l'index.html-->
-              <section class="bg-body">
-                <div class="container">
-                    <ul class="news-info-list text-center--md">
-                        <li>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>Abidjan</li>
-                        <li>                                
-                            <i class="fa fa-calendar" aria-hidden="true"></i><span id="current_date"></span> 
-                       
-                        </li>
-                        <li>
-                            <i class="fa fa-clock-o" aria-hidden="true"></i>Dernière mise à jour 
-                            {{NOW()->format('h:i')}}
-                        </li>
-                        
-                    </ul>
-                </div>
-            </section>
-<!--cece provient de l'index.html-->
-
-<!--cece provient de l'index.html-->
+<!-- Slide Menu -->
             <section class="bg-accent section-space-less2">
                 <div class="container">
                     <div class="row tab-space1">
@@ -132,23 +90,41 @@
                     </div>
                 </div>
             </section>
-<!--cece provient de l'index.html-->
+    <!-- Slide Menu -->
 
             <!-- News Slider Area End Here -->
             <!-- Feature News Area Start Here -->
             <section class="section-space-less30">
                 <div class="container">
+                    <div class="topic-border color-cod-gray mb-30">
+                        <div class="topic-box-lg color-cod-gray">INTERVIEW RECENTS</div>
+                    </div>
                     <div class="row">
+                        @foreach($Interview_present as $Interview)
                         <div class="col-lg-4 col-md-12">
                             <div class="hover-show-play-btn item-shadow-gray mb-30">
+                                @if($Interview->statut == 'video')
+                                <div>
+                                @else 
                                 <div class="img-overlay-70">
+                                @endif
                                     <div class="topic-box-top-xs">
-                                        <div class="topic-box-sm color-cod-gray mb-20">Fashion</div>
+                                        <div class="topic-box-sm color-cod-gray mb-20">
+                                            {{$Interview->typeInterview->libelle}}
+                                        </div>
                                     </div>
-                                    <img src="img/news/news288.jpg" alt="news" class="img-fluid">
+                                    @if($Interview->statut == 'video')
+                    <iframe width="100%" height="200" src="{{$Interview->video_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    @else 
+                    <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="{{$Interview->audio_url}}"></iframe>
+                    @endif
                                     <div class="text-center">
-                                        <a class="play-btn popup-youtube" href="http://www.youtube.com/watch?v=1iIZeIy7TqM">
-                                            <img src="img/banner/play.png" alt="play" class="img-fluid">
+                                        @if($Interview->statut == 'video')
+                                        <!-- <a class="play-btn popup-youtube" href="{{$Interview->video_url}}"> -->
+                                        @else 
+                                        <a class="play-btn popup-youtube" href="{{$Interview->audio_url}}">
+                                            <img src="view/img/banner/play.png" alt="play" class="img-fluid">
+                                        @endif
                                         </a>
                                     </div>
                                 </div>
@@ -156,13 +132,15 @@
                                     <div class="post-date-dark">
                                         <ul>
                                             <li>
-                                                <span>by</span>
-                                                <a href="single-news-1.html">Adams</a>
+                                                <span>Par</span>
+                                                <a href="single-news-1.html">{{$Interview->Auteur->nom}}
+                                                    {{$Interview->Auteur->prenom}}
+                                                </a>
                                             </li>
                                             <li>
                                                 <span>
                                                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                </span>March 22, 2017</li>
+                                                </span>{{date('d-m-Y', strtotime($Interview->created_at)) }}</li>
                                             <li>
                                                 <i class="fa fa-comment-o" aria-hidden="true"></i>
                                                 <a href="single-news-1.html">25</a>
@@ -170,83 +148,12 @@
                                         </ul>
                                     </div>
                                     <h3 class="title-medium-dark">
-                                        <a href="single-news-3.html">Taylor Swift’s Stylish arethey here Separtes many.</a>
+                                        <a href="single-news-3.html">{{$Interview->libelle}}.</a>
                                     </h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="hover-show-play-btn item-shadow-gray mb-30">
-                                <div class="img-overlay-70">
-                                    <div class="topic-box-top-xs">
-                                        <div class="topic-box-sm color-cod-gray mb-20">Style Zone</div>
-                                    </div>
-                                    <img src="img/news/news289.jpg" alt="news" class="img-fluid">
-                                    <div class="text-center">
-                                        <a class="play-btn popup-youtube" href="http://www.youtube.com/watch?v=1iIZeIy7TqM">
-                                            <img src="img/banner/play.png" alt="play" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="bg-body item-shadow-gray box-padding20">
-                                    <div class="post-date-dark">
-                                        <ul>
-                                            <li>
-                                                <span>by</span>
-                                                <a href="single-news-1.html">Adams</a>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                </span>March 22, 2017</li>
-                                            <li>
-                                                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                <a href="single-news-1.html">25</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h3 class="title-medium-dark">
-                                        <a href="single-news-3.html">Taylor Swift’s Stylish arethey here Separtes many.</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="hover-show-play-btn item-shadow-gray mb-30">
-                                <div class="img-overlay-70">
-                                    <div class="topic-box-top-xs">
-                                        <div class="topic-box-sm color-cod-gray mb-20">Daily Wear</div>
-                                    </div>
-                                    <img src="img/news/news290.jpg" alt="news" class="img-fluid">
-                                    <div class="text-center">
-                                        <a class="play-btn popup-youtube" href="http://www.youtube.com/watch?v=1iIZeIy7TqM">
-                                            <img src="img/banner/play.png" alt="play" class="img-fluid">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="bg-body item-shadow-gray box-padding20">
-                                    <div class="post-date-dark">
-                                        <ul>
-                                            <li>
-                                                <span>by</span>
-                                                <a href="single-news-1.html">Adams</a>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                </span>March 22, 2017</li>
-                                            <li>
-                                                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                <a href="single-news-1.html">25</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h3 class="title-medium-dark">
-                                        <a href="single-news-3.html">Taylor Swift’s Stylish arethey here Separtes many.</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>

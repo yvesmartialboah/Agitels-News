@@ -140,6 +140,46 @@
             </header>
  
 
+            <section class="bg-accent border-bottom add-top-margin">
+                <div class="container">
+                    <div class="row no-gutters d-flex align-items-center">
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-5">
+                            <div class="topic-box mt-4 mb-5">Flash Info</div>
+                        </div>
+                        <div class="col-lg-10 col-md-9 col-sm-8 col-7">
+                            <div class="feeding-text-dark">
+                                <ol id="sample" class="ticker">
+                                   @foreach($flash as $flashy)
+                                    <li>
+                                        <a href="#">{{$flashy->flashinfo}}</a>
+                                    </li>
+                                    @endforeach
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+              <section class="bg-body">
+                <div class="container">
+                    <ul class="news-info-list text-center--md">
+                        <li>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>Abidjan</li>
+                        <li>                                
+                            <i class="fa fa-calendar" aria-hidden="true"></i><span id="current_date"></span> 
+                       
+                        </li>
+                        <li>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>Dernière mise à jour 
+                            {{NOW()->format('h:i')}}
+                        </li>
+                        
+                    </ul>
+                </div>
+            </section>
+
 
  @yield('content')
 <!--  -->

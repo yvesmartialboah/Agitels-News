@@ -23,7 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'internauteController@accueil')->name('accueil');
 
-
 // Route dédiée au administrateurs connu sous le nom de membre (@membre @endmembre)
 
 Route::middleware('membre')->group(function () {

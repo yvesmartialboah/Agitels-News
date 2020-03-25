@@ -4,6 +4,7 @@ Il faut exécuter les commandes de migrations et les seeds préalablement enregi
 
 - php artisan migrate
 - php artisan db:seed
+- php artisan serve
 
 
 

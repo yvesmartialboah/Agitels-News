@@ -95,21 +95,30 @@
                                                             <a href="#">Anglais</a>
                                                         </li>
 
+                                                        <li>
+                                                            <a href="#">Le portail des entreprises</a>
+                                                        </li>
+
                                                     </ul>
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="#">Le portail des entreprises</a>
+                                                    <a href="#">Contactez nous</a>
                                                 </li>
                                                 @guest
-                                                <li>
+                                                <!-- <li>
                                                     <a href="{{route('register')}}">Inscription <i class="fa fa-user" aria-hidden="true"></i></a>
-                                                </li> 
+                                                </li> --> 
+
+                                                <li>
+                                                    <a href="{{route('register')}}" data-toggle="modal" data-target="#myModalRegister">Inscription  <i class="fa fa-user" aria-hidden="true"></i></a>
+                                                </li>   
 
                                                 <li>
                                                     <a href="{{route('login')}}" data-toggle="modal" data-target="#myModal">Connexion  <i class="fa fa-user" aria-hidden="true"></i></a>
                                                 </li>  
-<!-- 
+
+                                                <!-- 
                                                 <li>
                                                     <a href="{{route('login')}}">Connexion</a>
                                                 </li> -->
@@ -140,6 +149,7 @@
                                         </nav>
                                     </div>
                                 </div>
+                                <!-- Formulaire de recherche -->
                                 <div class="col-lg-2 col-md-12 text-right position-static">
                                     <div class="header-action-item on-mobile-fixed">
                                         <ul>
@@ -150,24 +160,6 @@
                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                     </button>
                                                 </form>
-                                            </li>
-                                            <li class="d-none d-sm-block d-md-block d-lg-none">
-                                                <button type="button" class="login-btn" data-toggle="modal" data-target="#myModal">
-                                                    <i class="fa fa-user" aria-hidden="true"></i>Sign in
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <div id="side-menu-trigger" class="offcanvas-menu-btn offcanvas-btn-repoint">
-                                                    <a href="#" class="menu-bar">
-                                                        <span></span>
-                                                        <span></span>
-                                                        <span></span>
-                                                    </a>
-                                                    <a href="#" class="menu-times close">
-                                                        <span></span>
-                                                        <span></span>
-                                                    </a>
-                                                </div>
                                             </li>
                                         </ul>
                                     </div>
@@ -242,163 +234,113 @@
                 </div>
             </footer>
             <!-- Footer Area End Here -->
-            <!-- Modal Start-->
+
+            <!-- Modal Start Login -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <div class="title-login-form">Login</div>
+                            <div class="title-login-form">Connexion</div>
                         </div>
                         <div class="modal-body">
                             <div class="login-form">
-                                <form>
-                                    <label>Username or email address *</label>
-                                    <input type="text" placeholder="Name or E-mail" />
-                                    <label>Password *</label>
-                                    <input type="password" placeholder="Password" />
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+                                    <label>Addresse mail *</label>
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Addresse mail" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>L'identifiant ou le mot de passe est incorrect.</strong>
+                                        </span>
+                                        @enderror
+                                    <label>Mot de passe *</label>
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mot de passe" name="password" required autocomplete="current-password">
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     <div class="checkbox checkbox-primary">
-                                        <input id="checkbox" type="checkbox" checked>
-                                        <label for="checkbox">Remember Me</label>
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} checked>
+
+                                        <label for="checkbox">Se souvenir de moi</label>
                                     </div>
-                                    <button type="submit" value="Login">Login</button>
-                                    <button class="form-cancel" type="submit" value="">Cancel</button>
+                                    <button type="submit" value="Login">Connexion</button>
+                                    <button class="form-cancel" data-toggle="modal" data-target="#myModal" value="">Abandonner</button>
+
+                                   <!--  Rappel de mot de passe - After -->
+
+                                   <!--  @if (Route::has('password.request'))
                                     <label class="lost-password">
-                                        <a href="#">Lost your password?</a>
+                                        <a href="{{ route('password.request') }}">Mot de passe oublié ?</a>
                                     </label>
+                                    @endif -->
+                                    
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Modal End-->
-            <!-- Offcanvas Menu Start -->
-            <div id="offcanvas-body-wrapper" class="offcanvas-body-wrapper">
-                <div id="offcanvas-nav-close" class="offcanvas-nav-close offcanvas-menu-btn">
-                    <a href="#" class="menu-times re-point">
-                        <span></span>
-                        <span></span>
-                    </a>
-                </div>
-                <div class="offcanvas-main-body">
-                    <ul id="accordion" class="offcanvas-nav panel-group">
-                        <li class="panel panel-default">
-                            <div class="panel-heading">
-                                <a aria-expanded="false" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    <i class="fa fa-home" aria-hidden="true"></i>Home Pages</a>
+            <!-- Modal End Login-->
+
+             <!-- Modal Start Register -->
+            <div class="modal fade" id="myModalRegister" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <div class="title-login-form">Inscription</div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="login-form">
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <label>Nom *</label>
+                                     <input id="name" placeholder="Votre nom" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    <label>Addresse mail *</label>
+                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Addresse mail" value="{{ old('email') }}" required autocomplete="email">
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+                                     <label>Mot de passe *</label>
+                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mot de passe" name="password" required autocomplete="new-password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>Mot de passe non identique</strong>
+                                        </span>
+                                    @enderror
+
+                                     <label>Confirmez votre mot de passe *</label>
+                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmation du mot de passe" required autocomplete="new-password">
+
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="checkbox" type="checkbox" checked>
+                                        <label for="checkbox">Se souvenir de moi</label>
+                                    </div>
+                                    <button type="submit" value="Login">Inscription</button>
+                                    <button class="form-cancel" data-toggle="modal" data-target="#myModalRegister" value="">Abandonner</button>
+                            
+                                </form>
                             </div>
-                            <div aria-expanded="false" id="collapseOne" role="tabpanel" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul class="offcanvas-sub-nav">
-                                        <li>
-                                            <a href="index.html">Home 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="index2.html">Home 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="index3.html">Home 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="index4.html">Home 4</a>
-                                        </li>
-                                        <li>
-                                            <a href="index5.html">Home 5</a>
-                                        </li>
-                                        <li>
-                                            <a href="index6.html">Home 6</a>
-                                        </li>
-                                        <li>
-                                            <a href="index7.html">Home 7</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="author-post.html">
-                                <i class="fa fa-user" aria-hidden="true"></i>Author Post Page</a>
-                        </li>
-                        <li class="panel panel-default">
-                            <div class="panel-heading">
-                                <a aria-expanded="false" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>Post Pages</a>
-                            </div>
-                            <div aria-expanded="false" id="collapseTwo" role="tabpanel" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul class="offcanvas-sub-nav">
-                                        <li>
-                                            <a href="post-style-1.html">Post Style 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="post-style-2.html">Post Style 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="post-style-3.html">Post Style 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="post-style-4.html">Post Style 4</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="panel panel-default">
-                            <div class="panel-heading">
-                                <a aria-expanded="false" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                    <i class="fa fa-info-circle" aria-hidden="true"></i>News Details Pages</a>
-                            </div>
-                            <div aria-expanded="false" id="collapseThree" role="tabpanel" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul class="offcanvas-sub-nav">
-                                        <li>
-                                            <a href="single-news-1.html">News Details 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-news-2.html">News Details 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-news-3.html">News Details 3</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="archive.html">
-                                <i class="fa fa-archive" aria-hidden="true"></i>Archive Page</a>
-                        </li>
-                        <li class="panel panel-default">
-                            <div class="panel-heading">
-                                <a aria-expanded="false" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                    <i class="fa fa-picture-o" aria-hidden="true"></i>Gallery Pages</a>
-                            </div>
-                            <div aria-expanded="false" id="collapseFour" role="tabpanel" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul class="offcanvas-sub-nav">
-                                        <li>
-                                            <a href="gallery-style-1.html">Gallery Style 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery-style-2.html">Gallery Style 2</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="404.html">
-                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>404 Error Page</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">
-                                <i class="fa fa-phone" aria-hidden="true"></i>Contact Page</a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Offcanvas Menu End -->
+            <!-- Modal End Register-->
+            
 
 
 

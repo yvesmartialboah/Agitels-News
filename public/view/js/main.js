@@ -1,7 +1,7 @@
 ! function(e) {
     "use strict";
     var a, t;
-    e("#current_date").length && (document.getElementById("current_date").innerHTML = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"][(a = new Date).getDay()] + " " + a.getDate() + ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"][a.getMonth()]  + " , " + a.getFullYear()), (-1 != (t = navigator.userAgent.toLowerCase()).indexOf("msie") || -1 != t.indexOf("trident")) && e("body").addClass("ie");
+    e("#current_date").length && (document.getElementById("current_date").innerHTML = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"][(a = new Date).getDay()] + " " + a.getDate() + " " + ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Decembre"][a.getMonth()]  + " , " + a.getFullYear()), (-1 != (t = navigator.userAgent.toLowerCase()).indexOf("msie") || -1 != t.indexOf("trident")) && e("body").addClass("ie");
     var n = e(".popup-youtube");
 
     function o() {

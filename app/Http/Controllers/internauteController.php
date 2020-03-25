@@ -34,14 +34,14 @@ class internauteController extends Controller
 
         // Comptage des rubriques
         // -- Début
-        $Pub1 = count(Publication::where('type_publication_id',1)->get());
-        $Pub2 = count(Publication::where('type_publication_id',2)->get());
-        $Pub3 = count(Publication::where('type_publication_id',3)->get());
-        $Pub4 = count(Publication::where('type_publication_id',4)->get());
-        $Pub5 = count(Publication::where('type_publication_id',5)->get());
-        $Pub6 = count(Publication::where('type_publication_id',6)->get());
-        $Pub7 = count(Publication::where('type_publication_id',7)->get());
-        $Pub8 = count(Publication::where('type_publication_id',8)->get());
+        $Pub1 = count(Publication::where('type_publication_id',1)->get()); // Portrait
+        $Pub2 = count(Publication::where('type_publication_id',2)->get()); // Reportage
+        $Pub3 = count(Publication::where('type_publication_id',3)->get()); // Affairage
+        $Pub4 = count(Publication::where('type_publication_id',4)->get()); // À vous l'honneur
+        $Pub5 = count(Publication::where('type_publication_id',5)->get()); // Leçon de vie
+        $Pub6 = count(Publication::where('type_publication_id',6)->get()); // Jeux et humour
+        $Pub7 = count(Publication::where('type_publication_id',7)->get()); // Anglais
+        $Pub8 = count(Publication::where('type_publication_id',8)->get()); // Portail des entreprises
         // -- Fin
 
         // dd($Pub1);

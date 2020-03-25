@@ -50,7 +50,7 @@
                             <div class="row no-gutters d-flex align-items-center">
                                 <div class="col-lg-2 d-none d-lg-block">
                                     <div class="logo-area">
-                                        <a href="index.html" class="img-fluid">
+                                        <a href="{{route('accueil')}}" class="img-fluid">
                                             <img src="view/img/logo-dark.png" alt="logo" class="img-fluid">
                                         </a>
                                     </div>
@@ -66,37 +66,76 @@
                                                     <a href="#">rubrique</a>
                                                     <ul class="ne-dropdown-menu">
                                                         <li>
-                                                            <a href="index.html">Portrait</a>
+                                                            <a href="#">Portrait</a>
                                                         </li>
                                                         <li>
-                                                            <a href="index2.html">A la decouverte</a>
+                                                            <a href="#">A la decouverte</a>
                                                         </li>
                                                         <li>
-                                                            <a href="index3.html">Reportage</a>
+                                                            <a href="#">Reportage</a>
                                                         </li>
                                                         <li>
-                                                            <a href="index4.html">Microtrotoire</a>
+                                                            <a href="#">Microtrotoire</a>
                                                         </li>
                                                         <li>
-                                                            <a href="index5.html">A vous l'honneur</a>
+                                                            <a href="#">A vous l'honneur</a>
                                                         </li>
                                                         <li>
-                                                            <a href="index7.html">Afferage</a>
+                                                            <a href="#">Afferage</a>
                                                         </li>
                                                         <li>
-                                                            <a href="single-news-4.html">Leçon de vie</a>
+                                                            <a href="#">Leçon de vie</a>
                                                         </li>
+
+                                                        <li>
+                                                            <a href="#">Jeux et humours</a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#">Anglais</a>
+                                                        </li>
+
                                                     </ul>
                                                 </li>
+                                               
                                                 <li>
-                                                    <a href="single-news-3.html">Jeux et humours</a>
+                                                    <a href="#">Le portail des entreprises</a>
                                                 </li>
+                                                @guest
                                                 <li>
-                                                    <a href="gallery-style-2.html">Anglais</a>
-                                                </li>
+                                                    <a href="{{route('register')}}">Inscription <i class="fa fa-user" aria-hidden="true"></i></a>
+                                                </li> 
+
                                                 <li>
-                                                    <a href="gallery-style-1.html">Le portail des entreprises</a>
+                                                    <a href="{{route('login')}}" data-toggle="modal" data-target="#myModal">Connexion  <i class="fa fa-user" aria-hidden="true"></i></a>
+                                                </li>  
+<!-- 
+                                                <li>
+                                                    <a href="{{route('login')}}">Connexion</a>
+                                                </li> -->
+
+                                                @else 
+
+                                                 <li>
+                                                    <a href="#"> Me déconnecter ?</a>
+                                                    <ul class="ne-dropdown-menu">
+                                                        <li>
+                                                            <a class="item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                                     Déconnexion
+                                                            </a>
+                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                @csrf
+                                                            </form>
+                                                            @endguest
+                                                        </li>
+                                                    </ul>
+
                                                 </li>
+
+
+
+                                               
                                             </ul>
                                         </nav>
                                     </div>
@@ -106,7 +145,7 @@
                                         <ul>
                                             <li>
                                                 <form id="top-search-form" class="header-search-light">
-                                                    <input type="text" class="search-input" placeholder="Search...." required="" style="display: none;">
+                                                    <input type="text" class="search-input" placeholder="Rechercher...." required="" style="display: none;">
                                                     <button class="search-button">
                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                     </button>

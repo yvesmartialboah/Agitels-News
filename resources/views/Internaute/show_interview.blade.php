@@ -9,12 +9,15 @@
                             <div class="news-details-layout1">
                                 <div class="position-relative mb-30">
                                     @if($Interview->statut == 'video')
-                    <iframe width="100%" height="200" src="{{$Interview->video_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="400" src="{{$Interview->video_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     @else 
-                    <iframe width="100%" height="200" scrolling="no" frameborder="no" allow="autoplay" src="{{$Interview->audio_url}}"></iframe>
+                    <iframe width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="{{$Interview->audio_url}}"></iframe>
                     @endif
                                     <div class="topic-box-top-sm">
-                                        <div class="topic-box-sm color-cinnabar mb-20">{{$Interview->typeInterview->libelle}}</div>
+                                    	<br> <br>
+                                        <div class="topic-box-sm color-cinnabar mb-20">
+                                        	{{$Interview->typeInterview->libelle}}
+                                        </div>
                                     </div>
                                 </div>
                                 <h2 class="title-semibold-dark size-c30">{{$Interview->libelle}}</h2>

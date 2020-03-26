@@ -27,7 +27,7 @@
                                         </ul>
                                     </div>
                                     <h1 class="title-medium-light">
-                                        <a href="single-news-1.html">{{$AvouslHonneur_slide->libelle}}</a>
+                                        <a href="{{route('view_article',$AvouslHonneur_slide->id)}}">{{$AvouslHonneur_slide->libelle}}</a>
                                     </h1>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                                 {{$Reportage_slide->typePublication->libelle}}
                                             </div>
                                             <h2 class="title-medium-light">
-                                                <a href="#">{{$Reportage_slide->libelle}}</a>
+                                                <a href="{{route('view_article',$Reportage_slide->id)}}">{{$Reportage_slide->libelle}}</a>
                                             </h2>
                                         </div>
                                         <img src="image_publication/{{$Reportage_slide->image}}" alt="news" class="img-fluid width-100">
@@ -66,7 +66,7 @@
                                         <div class="mask-content-sm">
                                             <div class="topic-box-sm color-apple mb-10">{{$Lecondevie_slide->typePublication->libelle}}</div>
                                             <h3 class="title-medium-light">
-                                                <a href="#">{{$Lecondevie_slide->libelle}} </a>
+                                                <a href="{{route('view_article',$Lecondevie_slide->id)}}">{{$Lecondevie_slide->libelle}} </a>
                                             </h3>
                                         </div>
                                         <img src="image_publication/{{$Lecondevie_slide->image}}" alt="news" class="img-fluid width-100">
@@ -79,7 +79,7 @@
                                                 {{$Anglais_slide->typePublication->libelle}}
                                             </div>
                                             <h3 class="title-medium-light">
-                                                <a href="single-news-1.html">{{$Anglais_slide->libelle}}</a>
+                                                <a href="{{route('view_article',$Anglais_slide->id)}}">{{$Anglais_slide->libelle}}</a>
                                             </h3>
                                         </div>
                                         <img src="Ang640x480/{{$Anglais_slide->image}}" alt="news" class="img-fluid width-100">
@@ -170,7 +170,7 @@
                                 @foreach($PortailEntreprise as $Portail)
                                 <div class="media mb-30 media-none--sm">
                                     <div class="position-relative width-40">
-                                        <a href="#" class="img-opacity-hover">
+                                        <a href="{{route('view_article',$Portail->id)}}" class="img-opacity-hover">
                                             <img src="image_publication/{{$Portail->image}}" alt="news" class="img-fluid">
                                         </a>
                                         <div class="topic-box-top-xs">
@@ -196,7 +196,7 @@
                                             </ul>
                                         </div>
                                         <h3 class="title-semibold-dark size-lg mb-15 mb5-md">
-                                            <a href="#">{{$Portail->libelle}}</a>
+                                            <a href="{{route('view_article',$Portail->id)}}">{{$Portail->libelle}}</a>
                                         </h3>
                                         <p>
                                             {!! Str::limit($Portail->contenu, 50, ' ...') !!} 
@@ -230,13 +230,13 @@
                                                         {{$Anglais_slide->typePublication->libelle}}
                                                     </div>
                                                 </div>
-                                                <a href="single-news-1.html" class="img-opacity-hover">
+                                                <a href="{{route('view_article',$Anglais_slide->id)}}" class="img-opacity-hover">
                                                     <img src="Ang640x480/{{$Anglais_slide->image}}" alt="news" class="img-fluid">
                                                 </a>
                                             </div>
                                             <div class="box-padding15 bg-body item-shadow-gray">
                                                 <h3 class="title-medium-dark size-sm mb-10">
-                                                    <a href="#">{{$Anglais_slide->libelle}}</a>
+                                                    <a href="{{route('view_article',$Anglais_slide->id)}}">{{$Anglais_slide->libelle}}</a>
                                                 </h3>
                                             </div>
                                         </div>
@@ -278,11 +278,11 @@
                                         <li>
                                             <span>
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            </span>{{date('d-m-Y', strtotime($Portail->created_at)) }}</li>
+                                            </span>{{date('d-m-Y', strtotime($Aff->created_at)) }}</li>
                                     </ul>
                                 </div>
                                 <h3 class="title-medium-dark">
-                                    <a href="#">{{$Aff->libelle}}</a>
+                                    <a href="{{route('view_article',$Aff->id)}}">{{$Aff->libelle}}</a>
                                 </h3>
                             </div>
                         </div>
@@ -302,7 +302,7 @@
                                 <div class="content p-30-r">
                                     <div class="ctg-title-xs">{{$Port->typePublication->libelle}}</div>
                                     <h3 class="title-regular-light size-lg">
-                                        <a href="#">{{$Port->libelle}}</a>
+                                        <a href="{{route('view_article',$Port->id)}}">{{$Port->libelle}}</a>
                                     </h3>
                                     <div class="post-date-light">
                                         <ul>
@@ -340,7 +340,7 @@
                                 <div class="col-md-12 col-sm-6 col-12 mb-30">
                                     <div class="media item-shadow-gray bg-body media-none--sm">
                                         <div class="position-relative width-40 width46-lg">
-                                            <a href="single-news-1.html" class="img-opacity-hover img-overlay-70">
+                                            <a href="{{route('view_article',$Jeux->id)}}" class="img-opacity-hover img-overlay-70">
                                                 <img src="image_publication/{{$Jeux->image}}" alt="news" class="img-fluid">
                                             </a>
                                             <div class="topic-box-top-xs">
@@ -364,7 +364,7 @@
                                                 </ul>
                                             </div>
                                             <h3 class="title-semibold-dark size-lg mb-15">
-                                                <a href="#">{{$Jeux->libelle}}</a>
+                                                <a href="{{route('view_article',$Jeux->id)}}">{{$Jeux->libelle}}</a>
                                             </h3>
                                             <p>
                                                 {!! Str::limit($Jeux->contenu, 50, ' ...') !!} 

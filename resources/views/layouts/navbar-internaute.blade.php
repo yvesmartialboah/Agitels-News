@@ -60,45 +60,18 @@
                                         <nav id="dropdown">
                                             <ul>
                                                 <li class="btn">
-                                                    <a href="#">Acceuil</a>
+                                                    <a href="{{route('accueil')}}">Acceuil</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">rubrique</a>
+                                                    <a href="#">Publications</a>
                                                     <ul class="ne-dropdown-menu">
                                                         <li>
-                                                            <a href="#">Portrait</a>
+                                                            <a href="#">Articles</a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">A la decouverte</a>
+                                                            <a href="#">Interview</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="#">Reportage</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">Microtrotoire</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">A vous l'honneur</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">Afferage</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">Leçon de vie</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="#">Jeux et humours</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="#">Anglais</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="#">Le portail des entreprises</a>
-                                                        </li>
-
+                                                     
                                                     </ul>
                                                 </li>
                                                

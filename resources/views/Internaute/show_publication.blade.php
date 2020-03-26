@@ -97,7 +97,7 @@
                                     <p class="lead text-danger">Pour poster un commentaire, vous devez être connecté au site.</p>
                                     <form id="leave-comments">
                                     @else
-                                    <form >
+                                    <form>
                                     @endguest
                                         <div class="row">
                                             <div class="col-md-4 col-sm-12">

@@ -22,9 +22,9 @@ Il faut exécuter les commandes de migrations et les seeds préalablement enregi
 
 ### Exemple d'*Iframe*
 
-- *youtube* :  <iframe width="560" height="315" src="https://www.youtube.com/embed/JyJuLSzt9wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+- *youtube* :  `<iframe width="560" height="315" src="https://www.youtube.com/embed/JyJuLSzt9wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-- *soundcloud* :  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/127755258&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+- *soundcloud* :  `<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/127755258&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>`
 
 ## Vulnérabilités en matière de sécurité
 

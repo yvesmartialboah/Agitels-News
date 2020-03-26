@@ -66,10 +66,10 @@
                                                     <a href="#">Publications</a>
                                                     <ul class="ne-dropdown-menu">
                                                         <li>
-                                                            <a href="#">Articles</a>
+                                                            <a href="{{route('list_articles')}}">Articles</a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">Interview</a>
+                                                            <a href="{{route('list_interview')}}">Interview</a>
                                                         </li>
                                                      
                                                     </ul>

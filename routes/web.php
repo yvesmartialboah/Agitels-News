@@ -22,8 +22,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'internauteController@accueil')->name('accueil');
+
 Route::get('/article/{id}/detail', 'internauteController@view_article')->name('view_article');
+Route::get('/articles', 'internauteController@list_articles')->name('list_articles');
+
 Route::get('/interview/{id}/detail', 'internauteController@view_interview')->name('view_interview');
+Route::get('/interview', 'internauteController@list_interview')->name('list_interview');
 
 // Route dédiée au administrateurs connu sous le nom de membre (@membre @endmembre)
 

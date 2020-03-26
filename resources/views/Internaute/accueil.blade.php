@@ -207,7 +207,7 @@
                                 <div class="row">
                                     <div class="col-lg-7 col-md-12"></div>
                                     <div class="col-lg-3 offset-6 col-md-12">
-                                        <a href="#" class="btn-ftf-dtp-52 mb-15 mb5-md">Lire Plus</a>
+                                        <a href="{{route('list_articles')}}" class="btn-ftf-dtp-52 mb-15 mb5-md">Lire Plus</a>
                                     </div>
                                 </div>
                             </div>

@@ -99,4 +99,30 @@ class internauteController extends Controller
         return view('Internaute.show_interview', compact('Interview','flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function list_articles()
+    {
+        $flash = Flash::OrderBy('id','desc')->get();
+        $Publication = Publication::with('typePublication','Auteur')->OrderBy('id','desc')->get();
+        // dd($Publication);
+        return view('Internaute.list_articles', compact('Publication','flash'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function list_interview()
+    {
+        $flash = Flash::OrderBy('id','desc')->get();
+        $Interview_present = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->get();
+        // dd($Interview_present)
+        return view('Internaute.list_interview', compact('Interview_present','flash'));
+    }
+
 }

@@ -14,7 +14,7 @@ Il faut exécuter les commandes de migrations et les seeds préalablement enregi
 - uploader vos vidéos sur la chaine youtube
 - choisir l'option *partager* puis *intégrer* afin de pouvoir récupérer le lien *Url* contenu dans l'*Iframe*
 
-### Cas des Audios
+### Cas des Audio
 
 - Créer un compte sur *https://soundcloud.com/*
 - uploader vos interviews audio sur cette plateforme.

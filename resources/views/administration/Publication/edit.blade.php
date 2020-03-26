@@ -97,7 +97,7 @@
                                         <div class="field">
                                             <label>contenu</label>
                                             <div class="field">
-                                                <textarea class="trumbowygeditor" name="contenu" value="{!! $Publication->contenu !!}"></textarea>
+                                                <textarea class="trumbowygeditor" name="contenu" value="{!! $Publication->contenu !!}"> {!! $Publication->contenu !!}</textarea>
                                             </div>
                                         <button type="submit" class="ui blue submit button">Mettre à jour</button>
                                     </form>

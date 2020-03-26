@@ -47,4 +47,56 @@ class internauteController extends Controller
         // dd($Pub1);
     	return view('Internaute.accueil',compact('flash', 'Anglais_slide', 'AvouslHonneur_slide', 'Reportage_slide', 'Lecondevie_slide', 'Interview_present', 'PortailEntreprise', 'Anglais', 'Affairage', 'Portrait', 'JeuxetHumour','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
     }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function view_article($id)
+    {
+         // Comptage des rubriques
+        // -- Début
+        $Pub1 = count(Publication::where('type_publication_id',1)->get()); // Portrait
+        $Pub2 = count(Publication::where('type_publication_id',2)->get()); // Reportage
+        $Pub3 = count(Publication::where('type_publication_id',3)->get()); // Affairage
+        $Pub4 = count(Publication::where('type_publication_id',4)->get()); // À vous l'honneur
+        $Pub5 = count(Publication::where('type_publication_id',5)->get()); // Leçon de vie
+        $Pub6 = count(Publication::where('type_publication_id',6)->get()); // Jeux et humour
+        $Pub7 = count(Publication::where('type_publication_id',7)->get()); // Anglais
+        $Pub8 = count(Publication::where('type_publication_id',8)->get()); // Portail des entreprises
+        // -- Fin
+
+        $flash = Flash::OrderBy('id','desc')->get();
+        $Publication = Publication::with('typePublication','Auteur')->OrderBy('id','desc')->findOrFail($id);
+        // dd($Publication);
+        return view('Internaute.show_publication', compact('Publication', 'flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function view_interview($id)
+    {
+         // Comptage des rubriques
+        // -- Début
+        $Pub1 = count(Publication::where('type_publication_id',1)->get()); // Portrait
+        $Pub2 = count(Publication::where('type_publication_id',2)->get()); // Reportage
+        $Pub3 = count(Publication::where('type_publication_id',3)->get()); // Affairage
+        $Pub4 = count(Publication::where('type_publication_id',4)->get()); // À vous l'honneur
+        $Pub5 = count(Publication::where('type_publication_id',5)->get()); // Leçon de vie
+        $Pub6 = count(Publication::where('type_publication_id',6)->get()); // Jeux et humour
+        $Pub7 = count(Publication::where('type_publication_id',7)->get()); // Anglais
+        $Pub8 = count(Publication::where('type_publication_id',8)->get()); // Portail des entreprises
+        // -- Fin
+        
+        $flash = Flash::OrderBy('id','desc')->get();
+        $Interview = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->findOrFail($id);
+        // dd($Interview);
+        return view('Internaute.show_interview', compact('Interview','flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
+    }
+
 }

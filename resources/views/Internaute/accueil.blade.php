@@ -213,19 +213,9 @@
                             </div>
                         </div>
                         <div class="ne-sidebar sidebar-break-md col-lg-4 col-md-12">
-                            <div class="sidebar-box">
-                                <div class="topic-border color-cod-gray mb-30">
-                                    <div class="topic-box-lg color-cod-gray">Publicité</div>
-                                </div>
-                              
-                            </div>
-                            <div class="sidebar-box">
-                                <div class="ne-banner-layout1 text-center">
-                                    <a href="#">
-                                        <img src="view/img/banner/banner12.jpg" alt="ad" class="img-fluid">
-                                    </a>
-                                </div>
-                            </div>
+                            <!-- Publicité -->
+                            @include("Components.publicite_accueil_1")
+                            <!-- Publicité -->
                             <div class="sidebar-box">
                                 <div class="topic-border color-cod-gray">
                                     <div class="topic-box-lg color-cod-gray">Anglais</div>
@@ -386,79 +376,9 @@
                             </div>
                         </div>
                         <div class="ne-sidebar sidebar-break-md col-lg-4 col-md-12">
-                            <div class="sidebar-box">
-                                <div class="topic-border color-cod-gray mb-30">
-                                    <div class="topic-box-lg color-cod-gray">Rubriques</div>
-                                </div>
-                                <ul class="archive-list2 mb-25">
-                                    <li>
-                                        <a href="#">Portrait
-                                            <span> {{$Pub1}}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Reportage
-                                            <span> {{$Pub2}}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Affairage
-                                            <span> {{$Pub3}}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">À vous l'honneur
-                                            <span> {{$Pub4}}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Leçon de vie
-                                            <span> {{$Pub5}}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Jeux et humour
-                                            <span> {{$Pub6}} </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Anglais
-                                            <span> {{$Pub7}} </span>
-                                        </a>
-                                    </li> 
-
-                                    <li>
-                                        <a href="#">Portail des entreprises
-                                            <span> {{$Pub8}} </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="sidebar-box">
-                                <div class="ne-banner-layout2 text-center">
-                                    <a href="#">
-                                        <img src="view/img/banner/banner5.jpg" alt="ad" class="img-fluid">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="sidebar-box">
-                                <div class="topic-border color-cod-gray mb-30">
-                                    <div class="topic-box-lg color-cod-gray">Newsletter</div>
-                                </div>
-                                <div class="newsletter-area bg-primary">
-                                    <h2 class="title-medium-light size-xl">Abonnez vous à la newsletter</h2>
-                                    <img src="view/img/banner/newsletter.png" alt="newsletter" class="img-fluid m-auto mb-15">
-                                    <p>Tenez vous informer de tout ce qui se passe sur le site.</p>
-                                    <div class="input-group stylish-input-group">
-                                        <input type="text" placeholder="Entrer votre mail" class="form-control">
-                                        <span class="input-group-addon">
-                                            <button type="submit">
-                                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            @include("Components.rubriques")
+                            @include("Components.publicite_accueil_2")
+                            @include("Components.newsletter")
                         </div>
                     </div>
                 </div>

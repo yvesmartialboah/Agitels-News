@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
         <!-- Normalize CSS -->
         <link rel="stylesheet" href="{{asset('view/css/normalize.css')}}">
         <!-- Main CSS -->
@@ -51,7 +51,7 @@
                                 <div class="col-lg-2 d-none d-lg-block">
                                     <div class="logo-area">
                                         <a href="{{route('accueil')}}" class="img-fluid">
-                                            <img src="view/img/logo-dark.png" alt="logo" class="img-fluid">
+                                            <img src="{{asset('view/img/logo-dark.png')}}" alt="logo" class="img-fluid">
                                         </a>
                                     </div>
                                 </div>
@@ -224,8 +224,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 text-center">
-                                <a href="index.html" class="bg-dark footer-logo img-fluid">
-                                    <img src="view/img/logo.png" alt="logo" class="img-fluid">
+                                <a href="{{ route('accueil') }}" class="bg-dark footer-logo img-fluid">
+                                    <img src="{{asset('view/img/logo.png')}}" alt="logo" class="img-fluid">
                                 </a>
                                 <p>© 2020 L'agitelien. Tous droit réservés</p>
                             </div>

@@ -148,4 +148,16 @@ class internauteController extends Controller
         return view('Internaute.search', compact('flash', 'postsPublication', 'postsInterview'));
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function contact()
+    {
+        $flash = Flash::OrderBy('id','desc')->get();
+        // dd($flash)
+        return view('Internaute.contact', compact('flash'));
+    }
+
 }

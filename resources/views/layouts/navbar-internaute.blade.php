@@ -76,7 +76,7 @@
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="#">Contactez nous</a>
+                                                    <a href="{{route('contact')}}">Contactez nous</a>
                                                 </li>
                                                 @guest
                                                 <!-- <li>

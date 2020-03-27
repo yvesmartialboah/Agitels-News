@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 use App\Models\typePublication;
@@ -107,7 +108,7 @@ class internauteController extends Controller
     public function list_articles()
     {
         $flash = Flash::OrderBy('id','desc')->get();
-        $Publication = Publication::with('typePublication','Auteur')->OrderBy('id','desc')->get();
+        $Publication = Publication::with('typePublication','Auteur')->OrderBy('id','desc')->paginate(6);
         // dd($Publication);
         return view('Internaute.list_articles', compact('Publication','flash'));
     }
@@ -120,9 +121,31 @@ class internauteController extends Controller
     public function list_interview()
     {
         $flash = Flash::OrderBy('id','desc')->get();
-        $Interview_present = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->get();
+        $Interview_present = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->paginate(6);
         // dd($Interview_present)
         return view('Internaute.list_interview', compact('Interview_present','flash'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function search(Request $request)
+    {
+        $flash = Flash::OrderBy('id','desc')->get();
+        
+        $search = $request->get('search');
+        $postsInterview = Interview::with('typeInterview','Auteur')->where('libelle','like','%'.$search.'%')->paginate(3);
+        $postsPublication= Publication::with('typePublication','Auteur')->where('libelle','like','%'.$search.'%')->paginate(3);
+
+        $collection = collect($postsPublication);
+        $merged = $collection->merge($postsInterview);
+
+        //$data = $merged->all();
+        //dd($data);
+
+        return view('Internaute.search', compact('flash', 'postsPublication', 'postsInterview'));
     }
 
 }

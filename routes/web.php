@@ -29,6 +29,9 @@ Route::get('/articles', 'internauteController@list_articles')->name('list_articl
 Route::get('/interview/{id}/detail', 'internauteController@view_interview')->name('view_interview');
 Route::get('/interview', 'internauteController@list_interview')->name('list_interview');
 
+// Search
+Route::get('/search', 'internauteController@search')->name('search');
+
 // Route dédiée au administrateurs connu sous le nom de membre (@membre @endmembre)
 
 Route::middleware('membre')->group(function () {

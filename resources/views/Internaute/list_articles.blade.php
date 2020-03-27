@@ -62,9 +62,20 @@
                     </div>
                     <div class="row mt-30">
                         <div class="col-12">
-                            <div class="loadmore text-center">
-                                <a href="#" class="btn-gtf-dtp-50">
-                                    <i class="fa fa-circle-o-notch fa-spinner fa-spin" aria-hidden="true"></i>Chargement ...</a>
+                            <div class="container text-center">
+                            <div class="row no-gutters divider blog-post-slider">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <a href="{{$Publication->previousPageUrl()}}" class="prev-article">
+                                            <i class="fa fa-angle-left" aria-hidden="true"></i>Article Précédent</a>
+                                        <!-- <h3 class="title-medium-dark pr-50">Wonderful Outdoors Experience: Eagle Spotting in Alaska</h3> -->
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-rights">
+                                        <a href="{{$Publication->nextPageUrl()}}" class="next-article">Article Suivant
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </a>
+                                        <!-- <h3 class="title-medium-dark pl-50">The only thing that overcomes hard luck is hard work</h3> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

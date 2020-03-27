@@ -127,16 +127,24 @@
                                     <div class="header-action-item on-mobile-fixed">
                                         <ul>
                                             <li>
-                                                <form id="top-search-form" class="header-search-light">
-                                                    <input type="text" class="search-input" placeholder="Rechercher...." required="" style="display: none;">
-                                                    <button class="search-button">
+                                                <form id="top-search-form" method="GET" action="{{route('search')}}" class="header-search-light">
+                                                    <div class="input-group stylish-input-group ">
+                                                        <input type="text" name="search" placeholder="Rechercher" class="form-controls">
+                                                        <span class="input-group-addon btn-danger">
+                                                            <button type="submit">
+                                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                    <!-- <button class="search-button" type="submit">
                                                         <i class="fa fa-search" aria-hidden="true"></i>
-                                                    </button>
+                                                    </button> -->
                                                 </form>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- Formulaire de recherche -->
                             </div>
                         </div>
                     </div>

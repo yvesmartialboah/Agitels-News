@@ -26,3 +26,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Interview
 // Route::resource('interview', 'InterviewController');
+
+// Newsletter
+Route::post('/Newsletter', 'newsletterController@store');

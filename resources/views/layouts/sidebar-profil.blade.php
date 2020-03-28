@@ -92,6 +92,13 @@
             </div>
             @membre
             <div class="ui divider"></div>
+            <a class="item" href="{{route('news.index')}}">
+                <i class="ion-email icon"></i> <span class="colhidden">Newsletter </span>
+            </a>
+            <a class="item" href="{{route('list_messages')}}">
+                <i class="ion-eye icon"></i> <span class="colhidden">Liste Newsletter </span>
+            </a>
+            <div class="ui divider"></div>
             <a class="item" href="#">
                 <i class="ion-printer icon"></i> <span class="colhidden">-----</span>
             </a>

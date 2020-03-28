@@ -27,6 +27,18 @@
                                         {{Auth::user()->fonction}}, <i class="icon map marker"></i> {{Auth::user()->residence}}
                                     </div>
                                 </div>
+                                @membre
+                                <div class="ui cards">
+                                    <div class="card">
+                                        <div class="content">
+                                            <i class="right floated dollar sign icon"></i>
+                                            <div class="header">Don </div>
+                                            <div class="meta">Reçu sur la plateforme l'<b><i>Agitelien</i></b> </div>
+                                            <div class="description"><i class="eye icon"></i> <b>1.500.000</b><i class="dollar sign icon"></i> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endmembre
                             </div>
                         </div>
                     </div>
@@ -66,9 +78,9 @@
                                  <div class="card">
                                     <div class="content">
                                         <i class="right floated dollar sign icon"></i>
-                                        <div class="header">Don </div>
-                                        <div class="meta">Reçu sur la plateforme l'<b><i>Agitelien</i></b> </div>
-                                        <div class="description"><i class="eye icon"></i> <b>1.500.000</b><i class="dollar sign icon"></i> </div>
+                                        <div class="header">Newsletter </div>
+                                        <div class="meta">Nombre de personnes <b><i>abonnés</i></b> </div>
+                                        <div class="description"><i class="eye icon"></i> <b>{{$count_newsletter}}</b> </div>
                                     </div>
                                 </div>
                             </div>

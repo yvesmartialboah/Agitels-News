@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 use App\Models\Publication;
+use App\Models\newsletter;
 use App\Models\Interview;
 use App\Models\Auteur;
 
@@ -33,11 +34,13 @@ class HomeController extends Controller
         $Publication = Publication::All();
         $Interview = Interview::All();
         $Auteur = Auteur::All();
+        $newsletter = newsletter::All();
 
         $count_Pub = count($Publication); // Nombre des articles publiés.
         $count_Int = count($Interview); // Nombre des interviews effectués.
         $count_Auth = count($Auteur); // Nombre des auteurs enregistrés.
+        $count_newsletter = count($newsletter); // Nombre des auteurs enregistrés.
 
-        return view('home',compact('count_Pub', 'count_Int', 'count_Auth','derniers_posts', 'last_interview_posts'));
+        return view('home',compact('count_Pub', 'count_Int', 'count_newsletter', 'count_Auth','derniers_posts', 'last_interview_posts'));
     }
 }

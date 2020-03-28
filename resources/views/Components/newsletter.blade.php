@@ -6,13 +6,16 @@
         <h2 class="title-medium-light size-xl">Abonnez vous à la newsletter</h2>
         <img src="{{asset('view/img/banner/newsletter.png')}}" alt="newsletter" class="img-fluid m-auto mb-15">
         <p>Tenez vous informer de tout ce qui se passe sur le site.</p>
-        <div class="input-group stylish-input-group">
-            <input type="text" placeholder="Entrer votre mail" class="form-control">
-            <span class="input-group-addon">
-                <button type="submit">
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </button>
-            </span>
-        </div>
+            <form id="Newsletter">
+                <div class="input-group stylish-input-group">
+                        {{csrf_field()}}
+                        <input type="email" id="email" name="email" placeholder="Entrer votre mail" class="form-control">
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                </div>
+            </form>
     </div>
 </div>

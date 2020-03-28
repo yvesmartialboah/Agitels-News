@@ -34,6 +34,11 @@
         <link rel="stylesheet" type="text/css" href="{{asset('view/css/ie-only.css')}}" />
         <!-- Modernizr Js -->
         <script src="{{asset('view/js/modernizr-2.8.3.min.js')}}"></script>
+
+        <link href="{{asset('toast/jquery.toast.min.css')}}" id="theme" rel="stylesheet" />
+
+        <!-- Sweety -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     </head>
 
     <body>
@@ -208,7 +213,12 @@
                                 <a href="{{ route('accueil') }}" class="bg-dark footer-logo img-fluid">
                                     <img src="{{asset('view/img/logo.png')}}" alt="logo" class="img-fluid">
                                 </a>
-                                <p>© 2020 L'agitelien. Tous droit réservés</p>
+                                <p>© 2020 <b id="color">L'agitélien</b>. Tous droit réservés Par <a id="color" href="https://yvesboah.netlify.com/"><b>Yves Boah</b></a></p>
+                                <style>
+                                    #color{
+                                        color: red;
+                                    }
+                                </style>
                             </div>
                         </div>
                     </div>
@@ -366,6 +376,50 @@
         <script src="{{asset('view/js/ticker.js')}}" type="text/javascript"></script>
         <!-- Custom Js -->
         <script src="{{asset('view/js/main.js')}}" type="text/javascript"></script>
+        <!-- Toast -->
+        <script src="{{asset('toast/jquery.toast.min.js')}}"></script>
+
+    
+
+<script>
+    // Surchagement de script
+        // Newsletter
+        $('#Newsletter').submit(function (e) {
+                var email = document.getElementById('email');
+                
+            if(!email.value) {
+                $.toast({
+                    heading: 'Mail incorrect ou vide ',
+                    text: 'veuillez réessayer svp !',
+                    showHideTransition: 'fade',
+                    icon: 'warning'
+                })
+                // console.log(e)
+                e.preventDefault()
+            } else {
+
+                $.ajax({
+                    url: '/api/Newsletter',
+                    method: "POST",
+                    data: $(this).serialize(),
+                    datatype: 'json'
+                })
+                e.preventDefault()
+                $(this).get(0).reset()
+                $.toast({
+                    heading: 'Abonnement réussie',
+                    text: 'Votre Email à bien été Enregistré.',
+                    showHideTransition: 'slide',
+                    icon: 'success'
+                })
+            }
+        })
+
+        // Surchage de script
+        // Newsletter
+</script>
+
+
     </body>
 
 </html>

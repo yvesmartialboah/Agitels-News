@@ -25,6 +25,11 @@
         <!-- Main Menu CSS -->
         <link rel="stylesheet" href="{{asset('view/css/meanmenu.min.css')}}">
         <!-- Magnific CSS -->
+         <!-- Main Menu CSS -->
+        <link rel="stylesheet" href="{{asset('view/css/meanmenu.min.css')}}">
+        <!-- Select2 CSS -->
+        <link rel="stylesheet" type="text/css" href="{{asset('view/css/select2.min.css')}}">
+        <!-- Magnific CSS -->
         <link rel="stylesheet" type="text/css" href="{{asset('view/css/magnific-popup.css')}}">
         <!-- Switch Style CSS -->
         <link rel="stylesheet" href="{{asset('view/css/hover-min.css')}}">
@@ -192,6 +197,12 @@
                             <i class="fa fa-clock-o" aria-hidden="true"></i>Dernière mise à jour 
                             {{NOW()->format('h:i')}}
                         </li>
+
+                        <li>
+                            @if(session()->has('login'))
+                                <strong class="text-danger">{{ session()->get('login') }}</strong>
+                            @endif 
+                        </li>
                         
                     </ul>
                 </div>
@@ -316,7 +327,22 @@
 
                                      <label>Confirmez votre mot de passe *</label>
                                       <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirmation du mot de passe" required autocomplete="new-password">
+                                    
+                                    <label>Genre *</label>
 
+                                    <div class="ne-custom-select">
+                                        <select id="ne-month" name="sex" class='select2' required>
+                                            <option value="">Choisir</option>
+                                            <option value="M">Homme</option>
+                                            <option value="F">Femme</option>
+                                        </select>
+                                    </div>
+                                        @error('sex')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+    
                                     <div class="checkbox checkbox-primary">
                                         <input id="checkbox" type="checkbox" checked>
                                         <label for="checkbox">Se souvenir de moi</label>
@@ -368,6 +394,8 @@
         <!-- jquery.counterup js -->
         <script src="{{asset('view/js/jquery.counterup.min.js')}}"></script>
         <script src="{{asset('view/js/waypoints.min.js')}}"></script>
+        <!-- Select2 Js -->
+        <script src="{{asset('view/js/select2.min.js')}}" type="text/javascript"></script>
         <!-- Isotope js -->
         <script src="{{asset('view/js/isotope.pkgd.min.js')}}" type="text/javascript"></script>
         <!-- Magnific Popup -->

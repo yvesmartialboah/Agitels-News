@@ -23,7 +23,7 @@
                                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                                 </span>
                                                     {{date('d-m-Y', strtotime($AvouslHonneur_slide->created_at)) }}
-                                            </li>
+                                            </li>  
                                         </ul>
                                     </div>
                                     <h1 class="title-medium-light">

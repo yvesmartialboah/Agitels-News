@@ -419,6 +419,47 @@
         // Newsletter
 </script>
 
+<script>
+    // Surchagement de script
+        // Message
+        $('#Message').submit(function (e) {
+                var nom = document.getElementById('nom');
+                var content = document.getElementById('content');
+                var email = document.getElementById('email');
+                
+            // if(!email.value || !content.value || !email.email)
+            if(1 ==2)
+            {
+                $.toast({
+                    heading: 'Formulaire incomplet ',
+                    text: 'veuillez réessayer svp !',
+                    showHideTransition: 'fade',
+                    icon: 'warning'
+                })
+                // console.log(e)
+                e.preventDefault()
+            } else {
+
+                $.ajax({
+                    url: '/api/contact',
+                    method: "POST",
+                    data: $(this).serialize(),
+                    datatype: 'json'
+                })
+                e.preventDefault()
+                $(this).get(0).reset()
+                $.toast({
+                    heading: 'Success',
+                    text: 'Votre Message a bien été Envoyé.',
+                    showHideTransition: 'slide',
+                    icon: 'success'
+                })
+            }
+        })
+
+        // Surchage de script
+        // Message
+</script>
 
     </body>
 

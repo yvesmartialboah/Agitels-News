@@ -42,28 +42,23 @@
                             <div class="topic-border color-cod-gray mb-30">
                                 <div class="topic-box-lg color-cod-gray">Envoyer Nous Un Message</div>
                             </div>
-                            <form id="contact-form" class="contact-form">
+                            <form id="Message" class="contact-form">
+                                 {{csrf_field()}}
                                 <fieldset>
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Nom" class="form-control" name="name" id="form-subject" data-error="Name field is required"
-                                                    required="">
-                                                <div class="help-block with-errors"></div>
+                                            <input type="text" placeholder="Nom" class="form-control" name="nom" id="nom">
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                             <div class="form-group">
-                                                <input type="email" placeholder="Adresse mail" class="form-control" name="email" id="form-email" data-error="Email field is required"
-                                                    required="">
-                                                <div class="help-block with-errors"></div>
+                                                <input type="email" placeholder="Adresse mail" class="form-control" name="email" id="email">
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <textarea placeholder="Message" class="textarea form-control" name="message" id="form-message" rows="7" cols="20" data-error="Message field is required"
-                                                    required=""></textarea>
-                                                <div class="help-block with-errors"></div>
+                                                <textarea placeholder="Message" class="textarea form-control" name="content" id="content" rows="7" cols="20"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-6 col-sm-12">

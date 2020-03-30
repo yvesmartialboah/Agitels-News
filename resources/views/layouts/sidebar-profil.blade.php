@@ -99,6 +99,11 @@
                 <i class="ion-eye icon"></i> <span class="colhidden">Liste Newsletter </span>
             </a>
             <div class="ui divider"></div>
+            <a class="item" href="{{route('contact.index')}}">
+                <i class="ion-email icon"></i> <span class="colhidden"> Message reçu  <b class="text-warning">&nbsp; &nbsp; &nbsp; {{ count($Contact) }}</b></span>
+            </a>
+
+            <div class="ui divider"></div>
             <a class="item" href="#">
                 <i class="ion-printer icon"></i> <span class="colhidden">-----</span>
             </a>

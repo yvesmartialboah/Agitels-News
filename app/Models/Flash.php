@@ -7,5 +7,4 @@ use Illuminate\Database\Eloquent\Model;
 class Flash extends Model
 {
     protected $fillable = ['flashinfo'];
-
 }

@@ -29,3 +29,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Newsletter
 Route::post('/Newsletter', 'newsletterController@store');
+
+// Contactez l'équipe
+Route::resource('contact', 'ContactController');

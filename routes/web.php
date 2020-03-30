@@ -55,5 +55,7 @@ Route::middleware('membre')->group(function () {
 		Route::post('/all', 'newsletterController@all')->name('all');
 		// Liste des messages envoyés au abonnés
 		Route::get('/list_messages', 'newsletterController@list_messages')->name('list_messages');
+	    // Contactez l'équipe
+	    Route::resource('contact', 'ContactController');
     });
 });

@@ -453,8 +453,8 @@
         $('#Message').submit(function (e) {
                 var nom = document.getElementById('nom');
                 var content = document.getElementById('content');
-                var email = document.getElementById('email');
-                
+                var email = document.getElementById('emails');
+                // console.log(nom.value, content.value, email.value)
             if(!email.value || !content.value || !nom.value)
             //if(1 ==2)
             {

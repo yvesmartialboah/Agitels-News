@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-12">
                                             <div class="form-group">
-                                                <input type="email" placeholder="Adresse mail" class="form-control" name="email" id="email">
+                                                <input type="email" placeholder="Adresse mail" class="form-control" name="email" id="emails">
                                             </div>
                                         </div>
                                         <div class="col-12">

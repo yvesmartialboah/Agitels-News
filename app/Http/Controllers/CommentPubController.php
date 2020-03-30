@@ -4,12 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Contact;
-use Session;
-use Mail;
-use DB;
-
-class ContactController extends Controller
+class CommentPubController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-       $Contact = Contact::OrderBy('id','desc')->get();
-        // dd($Contact);
-        return view('administration.Contact.index',compact('Contact') );
+        //
     }
 
     /**
@@ -41,19 +34,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-           'nom' =>'Required|min:3',
-           'email' =>'Required|min:3',
-           'content' =>'Required|min:3',
-        ]);
-        
-        Contact::create([
-        'nom'=>$request->nom,
-        'email'=>$request->email,
-        'content'=>$request->content,
-        ]);
-
-
+        //
     }
 
     /**

@@ -427,8 +427,8 @@
                 var content = document.getElementById('content');
                 var email = document.getElementById('email');
                 
-            // if(!email.value || !content.value || !email.email)
-            if(1 ==2)
+            if(!email.value || !content.value || !nom.value)
+            //if(1 ==2)
             {
                 $.toast({
                     heading: 'Formulaire incomplet ',

@@ -72,6 +72,12 @@
                                                 <li class="btn">
                                                     <a href="{{route('accueil')}}">Acceuil</a>
                                                 </li>
+                                                 @guest
+                                                 @else
+                                                <li class="btn">
+                                                    <a href="{{route('home')}}">Profil</a>
+                                                </li>
+                                                @endguest
                                                 <li>
                                                     <a href="#">Publications</a>
                                                     <ul class="ne-dropdown-menu">

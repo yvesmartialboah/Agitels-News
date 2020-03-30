@@ -27,7 +27,7 @@
                                         {{Auth::user()->fonction}}, <i class="icon map marker"></i> {{Auth::user()->residence}}
                                     </div>
                                 </div>
-                                @membre
+                               <!--  @membre
                                 <div class="ui cards">
                                     <div class="card">
                                         <div class="content">
@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endmembre
+                                @endmembre -->
                             </div>
                         </div>
                     </div>

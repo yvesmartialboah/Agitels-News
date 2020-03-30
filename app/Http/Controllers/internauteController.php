@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+use App\Models\Commentpublication;
+use App\Models\CommentInterview;
 use App\Models\typePublication;
 use App\Models\typeInterview;
 use App\Models\Publication;
@@ -69,10 +71,12 @@ class internauteController extends Controller
         $Pub8 = count(Publication::where('type_publication_id',8)->get()); // Portail des entreprises
         // -- Fin
 
+        $Commentpublication = Commentpublication::with('publication','user')->where('publication_id',$id)->OrderBy('id','desc')->paginate(10);
+        // dd($Commentpublication);
         $flash = Flash::OrderBy('id','desc')->get();
         $Publication = Publication::with('typePublication','Auteur')->OrderBy('id','desc')->findOrFail($id);
         // dd($Publication);
-        return view('Internaute.show_publication', compact('Publication', 'flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
+        return view('Internaute.show_publication', compact('Publication', 'flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8', 'Commentpublication'));
     }
 
     /**
@@ -94,10 +98,12 @@ class internauteController extends Controller
         $Pub8 = count(Publication::where('type_publication_id',8)->get()); // Portail des entreprises
         // -- Fin
         
+        $CommentInterview = CommentInterview::with('interview','user')->where('interview_id',$id)->OrderBy('id','desc')->paginate(10);
+        //dd($CommentInterview);
         $flash = Flash::OrderBy('id','desc')->get();
         $Interview = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->findOrFail($id);
         // dd($Interview);
-        return view('Internaute.show_interview', compact('Interview','flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
+        return view('Internaute.show_interview', compact('Interview','flash','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8', 'CommentInterview'));
     }
 
     /**

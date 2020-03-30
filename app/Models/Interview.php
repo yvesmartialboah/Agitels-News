@@ -17,4 +17,9 @@ class Interview extends Model
     {
         return $this->belongsTo('App\Models\Auteur');
     }
+
+    public function CommentInterview()
+    {
+        return $this->hasMany('App\Models\CommentInterview');
+    }
 }

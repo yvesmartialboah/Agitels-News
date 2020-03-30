@@ -17,4 +17,9 @@ class Publication extends Model
     {
         return $this->belongsTo('App\Models\Auteur');
     }
+
+    public function Commentpublication()
+    {
+       return $this->hasMany('App\Models\Commentpublication');
+    }
 }

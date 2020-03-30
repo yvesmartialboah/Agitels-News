@@ -57,5 +57,9 @@ Route::middleware('membre')->group(function () {
 		Route::get('/list_messages', 'newsletterController@list_messages')->name('list_messages');
 	    // Contactez l'équipe
 	    Route::resource('contact', 'ContactController');
+	    // Commentaire des publications
+	    Route::resource('commentpub', 'CommentPubController');
+	    // Commentaire des interviews
+	    Route::resource('commentint', 'CommentIntController');
     });
 });

@@ -42,4 +42,14 @@ class User extends Authenticatable
         return $this->role === 'membre';
     }
 
+    public function Commentpublication()
+    {
+       return $this->hasMany('App\Models\Commentpublication');
+    }
+
+    public function CommentInterview()
+    {
+       return $this->hasMany('App\Models\CommentInterview');
+    }
+
 }

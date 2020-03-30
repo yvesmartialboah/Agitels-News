@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Commentpublication;
+use App\Models\CommentInterview;
 
-class CommentPubController extends Controller
+class CommentIntController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,13 +38,13 @@ class CommentPubController extends Controller
     {
         $this->validate($request,[
            'commentaire' =>'Required|min:3',
-           'publication_id' =>'Required',
+           'interview_id' =>'Required',
            'user_id' =>'Required',
         ]);
 
-        Commentpublication::create([
+        CommentInterview::create([
             'commentaire'=>$request->commentaire,
-            'publication_id'=>$request->publication_id,
+            'interview_id'=>$request->interview_id,
             'user_id'=>$request->user_id,
         ]);
 

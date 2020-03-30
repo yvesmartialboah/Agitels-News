@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentpublicationsTable extends Migration
+class CreateCommentInterviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCommentpublicationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('commentpublications', function (Blueprint $table) {
+        Schema::create('comment_interviews', function (Blueprint $table) {
             $table->id();
             $table->text('commentaire')->nullable();
-            $table->integer('publication_id')->unsigned()->references('id')->on('publications')
-            ->foreign('publication_id');
+            $table->integer('interview_id')->unsigned()->references('id')->on('interviews')
+            ->foreign('interview_id');
             $table->integer('user_id')->unsigned()->references('id')->on('users')->foreign('user_id');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateCommentpublicationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commentpublications');
+        Schema::dropIfExists('comment_interviews');
     }
 }

@@ -41,11 +41,11 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-           'nom' =>'Required|min:3',
-           'email' =>'Required|min:3',
-           'content' =>'Required|min:3',
-        ]);
+        // $this->validate($request,[
+        //    'nom' =>'Required|min:3',
+        //    'email' =>'Required|min:3',
+        //    'content' =>'Required|min:3',
+        // ]);
         
         Contact::create([
         'nom'=>$request->nom,

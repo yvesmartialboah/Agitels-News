@@ -12,6 +12,7 @@
     <link href="{{asset('src/css/main.css')}}" rel="stylesheet" />
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link href="{{asset('src/plugins/pacejs/pace.css')}}" rel="stylesheet" />
+    <link href="{{asset('src/css/chat-page.css')}}" rel="stylesheet" />
 
     <link href="{{asset('src/plugins/trumbowyg/ui/trumbowyg.css')}}" rel="stylesheet" />
     <link href="{{asset('src/plugins/tinymce/skins/lightgray/skin.min.css')}}" rel="stylesheet" />
@@ -100,7 +101,9 @@
             </a>
             <div class="ui divider"></div>
             <a class="item" href="{{route('contact.index')}}">
-                <i class="ion-email icon"></i> <span class="colhidden"> Message reçu  <b class="text-warning">&nbsp; &nbsp; &nbsp; {{ count($Contact) }}</b></span>
+                <i class="ion-email icon"></i> <span class="colhidden"> Message reçu  
+                        
+                </span>
             </a>
 
             <div class="ui divider"></div>
@@ -199,6 +202,8 @@
     <!--semantic-->
     <script src="{{asset('src/dist/semantic.min.js')}}"></script>
     <!--semantic-->
+    <script src="{{asset('src/js/list.min.js')}}"></script>
+    <script src="{{asset('src/js/customjs/custom-chat.js')}}"></script>
     <script src="{{asset('src/plugins/cookie/js.cookie.js')}}"></script>
     <script src="{{asset('src/plugins/nicescrool/jquery.nicescroll.min.js')}}"></script>
 

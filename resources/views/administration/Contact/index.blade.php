@@ -5,106 +5,52 @@
 
     <!--maincontent-->
         <div class="mainWrap navslide">
-            <div class="ui equal width left aligned padded grid stackable">
-                <!--Site Content-->
-                <!--Site Content-->
-            
+            <div class="ui equal width left aligned padded grid stackable">     
+
                         <div class="row">
-                            <div class="sixteen wide column">
-                                <div class="ui segments">
-                                    <div class="ui segment">
-                                        <h5 class="ui header">
-                                            Liste des infos 
-                                        </h5>
-                                        <a href="{{route('news.create')}}">
-                                            <button class="ui lightbrownli  button">Envoyer un mail à tous les abonnés</button>
-                                        </a>
-                                        @if(session()->has('create'))
-                                            <div class="ui icon message inverted greenli">
-                                                <i class="alarm icon"></i>
-                                                <div class="content">
-                                                    <div class="header">
-                                                        {{ session()->get('create') }}
-                                                    </div>
-                                                    <!-- <p>{{ session()->get('create') }}</p> -->
-                                                </div>
-                                            </div>
-                                        @endif 
-
-                                         @if(session()->has('delete'))
-                                            <div class="ui icon message inverted redli">
-                                                <i class="alarm icon"></i>
-                                                <div class="content">
-                                                    <div class="header">
-                                                        {{ session()->get('delete') }}
-                                                    </div>
-                                                    <!-- <p>{{ session()->get('delete') }}</p> -->
-                                                </div>
-                                            </div>
-                                        @endif 
-
-                                        @if(session()->has('update'))
-                                            <div class="ui icon message inverted greenli">
-                                                <i class="alarm icon"></i>
-                                                <div class="content">
-                                                    <div class="header">
-                                                        {{ session()->get('update') }}
-                                                    </div>
-                                                    <!-- <p>{{ session()->get('update') }}</p> -->
-                                                </div>
-                                            </div>
-                                        @endif
-
-
-                                    </div>
-                                    <div class="ui segment">
-                                        <table id="data_table" class="ui compact selectable striped celled table tablet stackable" cellspacing="0" width="100%">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nom</th>
-                                                    <th>Email</th>
-                                                    <th>Message reçu des visiteurs</th>
-                                                    <th>Date de publication</th>
-                                                    <!-- <th>Modifier</th>
-                                                    <th>Supprimer</th> -->
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                @foreach($Contact as $Pub)
-                                                <tr>
-                                                    <td>{{$Pub->nom}}</td>
-                                                    <td>{{$Pub->email}}</td>
-                                                    <td>{{$Pub->content}}</td>
-                                                    <td>
-                                                        {{date('d-m-Y', strtotime($Pub->created_at)) }}
-                                                    </td>
-                                                  <!--   <td> 
-                                                        <a href="{{route('flash.edit',$Pub->id)}}">
-                                                            <button class="ui brown button">
-                                                                <i class="pencil alternate icon ui dark"></i>
-                                                            </button>
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <form action = "{{ route('flash.destroy',$Pub) }}"
-                                                            method = "POST"
-                                                            onsubmit = "return confirm('Êtes vous sûre ?')"; >
-                                                            {{ csrf_field() }}
-                                                            {{ method_field('DELETE') }}
-                                                            <button class="ui red button" type="submit">
-                                                                <i class="close icon ui dark"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td> -->
-                                                </tr>
-                                                @endforeach
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                             <div class="sixteen wide tablet thirteen wide computer column">
+                        <div class="ui segments">
+                            <div class="ui segment">
+                                <h5 class="ui header">
+                                    Message reçu des visiteurs du site.
+                                </h5>
                             </div>
+                            <div class="ui segment">
+
+                                <div class="chat">
+                                    <div class="chat-header clearfix">
+                                        <img class="ui circular image" src="{{asset('view/img/avatar/people/Abraham.png')}}" alt="avatar"/>
+
+                                        <div class="chat-about">
+                                            <div class="chat-with">Liste des Messages reçu</div>
+                                            <div class="chat-num-messages">déjà <b>{{ count($Contact) }}</b> messages</div>
+                                        </div>
+                                        <i class="fa fa-star"></i>
+                                    </div> <!-- end chat-header -->
+
+                                    <div class="chat-history">
+                                        <ul>
+                                           @foreach($Contact as $Pub)
+                                            <li>
+                                                <div class="message-data">
+                                                    <span class="message-data-name"><i class="icon circle online"></i> <b>{{$Pub->nom}} - {{$Pub->email}}</b></span>
+                                                    <span class="message-data-time"> {{date('d-m-Y à h:i', strtotime($Pub->created_at)) }}</span>
+                                                </div>
+                                                <div class="message my-message">
+                                                    {{$Pub->content}}
+                                                </div>
+                                                <i class="icon circle online"></i>
+                                                <i class="icon circle online" style="color: #AED2A6"></i>
+                                                <i class="icon circle online" style="color:#DAE9DA"></i>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </div> <!-- end chat-history -->
+
+                                </div> <!-- end chat -->
+                            </div>
+                        </div>
+                    </div>
                         </div>
                     </div>
         </div>

@@ -373,11 +373,7 @@
                                     </div>
                                 </div>
                                 @endforeach
-                            </div>
-                        </div> 
-
-                        <div class="col-lg-8 col-md-12">
-                            <div class="topic-border color-cod-gray mb-30">
+                                <div class="topic-border color-cod-gray mb-30">
                                 <div class="topic-box-lg color-cod-gray">Leçon de Vie</div>
                             </div>
                             <div class="row">
@@ -419,7 +415,8 @@
                                 </div>
                                 @endforeach
                             </div>
-                        </div>
+                            </div>
+                        </div> 
                         <div class="ne-sidebar sidebar-break-md col-lg-4 col-md-12">
                             @include("Components.rubriques")
                             @include("Components.publicite_accueil_2")

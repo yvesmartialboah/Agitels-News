@@ -374,6 +374,51 @@
                                 </div>
                                 @endforeach
                             </div>
+                        </div> 
+
+                        <div class="col-lg-8 col-md-12">
+                            <div class="topic-border color-cod-gray mb-30">
+                                <div class="topic-box-lg color-cod-gray">Leçon de Vie</div>
+                            </div>
+                            <div class="row">
+                                @foreach($Lecondevie as $Vie)
+                                <div class="col-md-12 col-sm-6 col-12 mb-30">
+                                    <div class="media item-shadow-gray bg-body media-none--sm">
+                                        <div class="position-relative width-40 width46-lg">
+                                            <a href="{{route('view_article',$Vie->id)}}" class="img-opacity-hover img-overlay-70">
+                                                <img src="image_publication/{{$Vie->image}}" alt="news" class="img-fluid">
+                                            </a>
+                                            <div class="topic-box-top-xs">
+                                                <div class="topic-box-sm color-cod-gray mb-20">{{$Vie->typePublication->libelle}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="media-body media-padding30 p-mb-none-child">
+                                            <div class="post-date-dark">
+                                                <ul>
+                                                    <li>
+                                                        <span>Par</span>
+                                                        <a href="#">
+                                                            {{$Vie->Auteur->nom}}
+                                                            {{$Vie->Auteur->prenom}}
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <span>
+                                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                        </span>{{date('d-m-Y', strtotime($Vie->created_at)) }}</li>
+                                                </ul>
+                                            </div>
+                                            <h3 class="title-semibold-dark size-lg mb-15">
+                                                <a href="{{route('view_article',$Vie->id)}}">{{$Vie->libelle}}</a>
+                                            </h3>
+                                            <p>
+                                                {!! Str::limit($Vie->contenu, 50, ' ...') !!} 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
                         </div>
                         <div class="ne-sidebar sidebar-break-md col-lg-4 col-md-12">
                             @include("Components.rubriques")

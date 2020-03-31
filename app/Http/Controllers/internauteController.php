@@ -28,12 +28,13 @@ class internauteController extends Controller
         $AvouslHonneur_slide = Publication::with('typePublication','Auteur')->where('type_publication_id',4)->OrderBy('id','desc')->take(1)->first();
         $Reportage_slide = Publication::with('typePublication','Auteur')->where('type_publication_id',2)->OrderBy('id','desc')->take(1)->first();
         $Lecondevie_slide = Publication::with('typePublication','Auteur')->where('type_publication_id',5)->OrderBy('id','desc')->take(1)->first();
+        $Lecondevie = Publication::with('typePublication','Auteur')->where('type_publication_id',5)->OrderBy('id','desc')->take(3)->get();
         $Interview_present = Interview::with('typeInterview','Auteur')->OrderBy('id','desc')->take(3)->get();
         $PortailEntreprise = Publication::with('typePublication','Auteur')->where('type_publication_id',8)->OrderBy('id','desc')->take(3)->get();
         $Anglais = Publication::with('typePublication','Auteur')->where('type_publication_id',7)->OrderBy('id','asc')->take(6)->get();
         $Affairage = Publication::with('typePublication','Auteur')->where('type_publication_id',3)->OrderBy('id','asc')->take(6)->get(); 
         $Portrait = Publication::with('typePublication','Auteur')->where('type_publication_id',1)->OrderBy('id','asc')->take(3)->get();
-        $JeuxetHumour = Publication::with('typePublication','Auteur')->where('type_publication_id',6)->OrderBy('id','desc')->take(4)->get();
+        $JeuxetHumour = Publication::with('typePublication','Auteur')->where('type_publication_id',6)->OrderBy('id','desc')->take(3)->get();
 
         // Comptage des rubriques
         // -- Début
@@ -48,7 +49,7 @@ class internauteController extends Controller
         // -- Fin
 
         // dd($Pub1);
-    	return view('Internaute.accueil',compact('flash', 'Anglais_slide', 'AvouslHonneur_slide', 'Reportage_slide', 'Lecondevie_slide', 'Interview_present', 'PortailEntreprise', 'Anglais', 'Affairage', 'Portrait', 'JeuxetHumour','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
+    	return view('Internaute.accueil',compact('flash', 'Anglais_slide', 'AvouslHonneur_slide', 'Reportage_slide', 'Lecondevie_slide', 'Lecondevie', 'Interview_present', 'PortailEntreprise', 'Anglais', 'Affairage', 'Portrait', 'JeuxetHumour','Pub1', 'Pub2', 'Pub3', 'Pub4', 'Pub5', 'Pub6', 'Pub7', 'Pub8'));
     }
 
 

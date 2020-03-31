@@ -172,16 +172,14 @@
                 <div class="container">
                     <div class="row no-gutters d-flex align-items-center">
                         <div class="col-lg-2 col-md-3 col-sm-4 col-5">
-                            <div class="topic-box mt-4 mb-5">Flash Info</div>
+                            <div class="topic-box mt-4 mb-5">Procédure</div>
                         </div>
                         <div class="col-lg-10 col-md-9 col-sm-8 col-7">
                             <div class="feeding-text-dark">
-                                <ol id="sample" class="ticker">
-                                   @foreach($flash as $flashy)
+                                <ol id="sample" class="ticker">  
                                     <li>
-                                        <a href="#">{{$flashy->flashinfo}}</a>
+                                        <a href="#">Suivez correctement le processus de rappel de mot de passe</a>
                                     </li>
-                                    @endforeach
                                 </ol>
                             </div>
                         </div>
@@ -215,7 +213,14 @@
             </section>
 
 
+
+<br>
+<br>
  @yield('content')
+<br>
+<br>
+<br>
+<br>
 <!--  -->
 <!--  -->
 

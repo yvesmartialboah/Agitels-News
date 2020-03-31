@@ -59,6 +59,7 @@
                         @endforeach
                        
                     </div>
+                    @if(count($postsPublication) > 0)
                     <div class="row mt-30">
                         <div class="col-12">
                              <div class="container text-center">
@@ -78,6 +79,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </section>
 
@@ -140,6 +142,7 @@
                         @endforeach
                     </div>
                 </div>
+                @if(count($postsInterview) > 0)
                     <div class="row mt-30">
                         <div class="col-12">
                             <div class="container text-center">
@@ -159,6 +162,7 @@
                             </div>
                         </div>
                     </div>
+                @endif
                 </div>
             </section>
 

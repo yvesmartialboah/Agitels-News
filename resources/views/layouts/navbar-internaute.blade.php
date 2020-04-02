@@ -145,7 +145,7 @@
                                             <li>
                                                 <form id="top-search-form" method="GET" action="{{route('search')}}" class="header-search-light">
                                                     <div class="input-group stylish-input-group ">
-                                                        <input type="text" name="search" placeholder="Rechercher" class="form-controls">
+                                                        <input type="text" name="search" placeholder="Rechercher" class="form-control">
                                                         <span class="input-group-addon btn-danger">
                                                             <button type="submit">
                                                                 <i class="fa fa-search" aria-hidden="true"></i>

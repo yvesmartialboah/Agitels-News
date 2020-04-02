@@ -141,10 +141,10 @@
                                                 <span>
                                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                                 </span>{{date('d-m-Y', strtotime($Interview->created_at)) }}</li>
-                                            <li>
+                                            <!-- <li>
                                                 <i class="fa fa-comment-o" aria-hidden="true"></i>
                                                 <a href="#">25</a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                     <h3 class="title-medium-dark">

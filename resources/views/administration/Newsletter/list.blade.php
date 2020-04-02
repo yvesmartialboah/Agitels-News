@@ -14,7 +14,7 @@
                                 <div class="ui segments">
                                     <div class="ui segment">
                                         <h5 class="ui header">
-                                            Liste des infos 
+                                            Liste des emails envoyer aux abonnés
                                         </h5>
                                         <a href="{{route('news.create')}}">
                                             <button class="ui blueli  button">Envoyer des mails aux abonnés</button>

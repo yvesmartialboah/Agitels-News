@@ -14,7 +14,7 @@
                                 <div class="ui segments">
                                     <div class="ui segment">
                                         <h5 class="ui header">
-                                            Liste des infos 
+                                            Liste des abonnés (Newsletter) 
                                         </h5>
                                         <a href="{{route('news.create')}}">
                                             <button class="ui lightbrownli  button">Envoyer un mail à tous les abonnés</button>

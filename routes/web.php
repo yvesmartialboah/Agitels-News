@@ -58,6 +58,16 @@ Route::middleware('membre')->group(function () {
 	    // Contactez l'équipe
 	    Route::resource('contact', 'ContactController');
 	    // Commentaire des publications
+	    //- Route::resource('commentpub', 'CommentPubController');
+	    // Commentaire des interviews
+	    //- Route::resource('commentint', 'CommentIntController');
+    });
+});
+
+
+Route::middleware('auth')->group(function () {
+	Route::group(['prefix' => 'admin'], function () {
+	    // Commentaire des publications
 	    Route::resource('commentpub', 'CommentPubController');
 	    // Commentaire des interviews
 	    Route::resource('commentint', 'CommentIntController');

@@ -64,7 +64,7 @@ class publicationController extends Controller
             // Obtenir l'extension
             // dd($image );
             $nomAvatar = time().'.'.$image->getClientOriginalExtension();
-            // time() génère un nom aléatoire_ç
+            // time() génère un nom aléatoire
             $image->move(public_path("image_publication"), $nomAvatar );
             // $image->move(base_path("image_publication"), $nomAvatar );
         }  

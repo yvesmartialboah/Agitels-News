@@ -148,7 +148,7 @@
                                         </ul>
                                     </div>
                                     <h3 class="title-medium-dark">
-                                        <a href="{{route('view_article',$Interview->id)}}">{{$Interview->libelle}}.</a>
+                                        <a href="{{route('view_interview',$Interview->id)}}">{{$Interview->libelle}}.</a>
                                     </h3>
                                 </div>
                             </div>
